@@ -1,4 +1,4 @@
-baseURL: "https://<your-github-username>.github.io/"
+baseURL: "https://miuyou.github.io/Blog/"
 languageCode: "zh-cn"
 title: "Spring Blog"
 theme: "PaperMod"
