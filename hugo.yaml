@@ -1,0 +1,68 @@
+baseURL: "https://<your-github-username>.github.io/"
+languageCode: "zh-cn"
+title: "Spring Blog"
+theme: "PaperMod"
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+pagination:
+  pagerSize: 10
+
+minify:
+  disableXML: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  mainSections:
+    - posts
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  DateFormat: "2006-01-02"
+
+  homeInfoParams:
+    Title: "你好，我是 Spring"
+    Content: "这里是我的博客，记录算法、学习与生活。"
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/<your-github-username>"
+
+menu:
+  main:
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 10
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 20
+    - identifier: friends
+      name: 友链
+      url: /friends/
+      weight: 30
+    - identifier: about
+      name: 关于
+      url: /about/
+      weight: 40
+
+markup:
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
