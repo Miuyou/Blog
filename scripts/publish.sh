@@ -19,6 +19,11 @@ rsync -a --delete "$SOURCE_DIR/posts/" "$ROOT_DIR/content/posts/"
 rsync -a "$SOURCE_DIR/pages/" "$ROOT_DIR/content/"
 rsync -a --delete "$SOURCE_DIR/images/" "$ROOT_DIR/static/images/"
 
+# Normalize file permissions after syncing from cross-platform mounts.
+find "$ROOT_DIR/content" "$ROOT_DIR/static/images" -type f -exec chmod 644 {} +
+find "$ROOT_DIR/content" -type d -exec chmod 755 {} +
+find "$ROOT_DIR/static/images" -type d -exec chmod 755 {} +
+
 # Keep about page as a standalone page instead of a post list item.
 if [ -f "$ROOT_DIR/content/posts/about.md" ]; then
   mv "$ROOT_DIR/content/posts/about.md" "$ROOT_DIR/content/about.md"
