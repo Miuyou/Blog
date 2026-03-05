@@ -1,0 +1,11 @@
+/* Homepage list background image.
+   Place image at: static/images/hero/home-bg.jpg */
+body.list {
+  background: url('/Blog/images/hero/home-bg.jpg') center / cover fixed no-repeat;
+}
+
+/* Keep content readable over the background image */
+.main {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(2px);
+}
