@@ -5,6 +5,7 @@ tags:
   - 模拟
   - 动态规划
   - 解题报告
+cover: "images/post-images/heoi2016tjoi2016pai-xu-ti-jie.jpg"
 ---
 
 * [P1398 [NOI2013]书法家](https://www.luogu.com.cn/problem/P1398)

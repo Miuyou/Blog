@@ -1,6 +1,7 @@
 ---
 title: 摸鱼之路
 date: 2020-10-08
+cover: "images/post-images/hello-gridea.png"
 ---
 
 ![](/images/post-images/1602143691333.png)

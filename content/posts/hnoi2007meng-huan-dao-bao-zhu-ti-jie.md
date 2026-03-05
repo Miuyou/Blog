@@ -3,6 +3,7 @@ title: "[HNOI2007]梦幻岛宝珠 题解"
 date: 2020-03-09
 tags:
   - 解题报告
+cover: "images/post-images/1583391593712.jpg"
 ---
 
 ![](https://cdn.luogu.com.cn/upload/image_hosting/iskee2vp.png)

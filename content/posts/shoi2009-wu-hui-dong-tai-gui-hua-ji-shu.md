@@ -5,6 +5,7 @@ tags:
   - 计数
   - 动态规划
   - 解题报告
+cover: "images/post-images/miu_you-no-wang-luo-liu.jpg"
 ---
 
 * [P2159 [SHOI2009]舞会](https://www.luogu.com.cn/problem/P2159)

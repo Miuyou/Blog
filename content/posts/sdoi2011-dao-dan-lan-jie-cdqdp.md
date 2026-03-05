@@ -6,6 +6,7 @@ tags:
   - 数据结构
   - 动态规划
   - 解题报告
+cover: "images/post-images/miu_you-no-shu-ju-jie-gou.jpg"
 ---
 
 * [P2487 [SDOI2011]拦截导弹](https://www.luogu.com.cn/problem/P2487)

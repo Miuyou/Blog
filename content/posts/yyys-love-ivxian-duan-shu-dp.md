@@ -5,6 +5,7 @@ tags:
   - 数据结构优化DP
   - 动态规划
   - 解题报告
+cover: "images/post-images/sheng-xuan-bu-ti-ji-hua-qwq.jpg"
 ---
 
 * [P2418 yyy loves OI IV](https://www.luogu.com.cn/problem/P2418)

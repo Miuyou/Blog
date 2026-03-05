@@ -3,6 +3,7 @@ title: "[HEOI2016/TJOI2016]排序 题解"
 date: 2020-02-27
 tags:
   - 解题报告
+cover: "images/post-images/1583294990170.jpg"
 ---
 
 题目要求我们求出第$q$位置上的数字.

@@ -6,6 +6,7 @@ tags:
   - 矩阵
   - 动态规划
   - 解题报告
+cover: "images/post-images/1583457992014.jpg"
 ---
 
 * [P1357 花园](https://www.luogu.com.cn/problem/P1357)

@@ -1,6 +1,7 @@
 ---
 title: Miu_you の 数据结构
 date: 2020-03-30
+cover: "images/post-images/1584947480820.jpg"
 ---
 
 ![](/images/post-images/1591605623747.jpg)

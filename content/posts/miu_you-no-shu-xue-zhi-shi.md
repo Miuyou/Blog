@@ -1,6 +1,7 @@
 ---
 title: Miu_you の 数学知识
 date: 2020-11-04
+cover: "images/post-images/1591513011155.jpg"
 ---
 
 重新整活

@@ -1,6 +1,7 @@
 ---
 title: Miu_you の 斜率/单调性等优化
 date: 2020-04-03
+cover: "images/post-images/1591519415942.jpg"
 ---
 
 * [P2120 [ZJOI2007]仓库建设](https://www.luogu.com.cn/problem/P2120)

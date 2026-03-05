@@ -1,6 +1,7 @@
 ---
 title: Miu_you の最小斯坦纳树
 date: 2020-03-26
+cover: "images/post-images/1602143691333.png"
 ---
 
 给定一个包含 $n$ 个结点和 $m$ 条带权边的无向连通图 $G=(V,E)$。

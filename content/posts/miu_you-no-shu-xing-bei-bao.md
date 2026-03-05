@@ -3,6 +3,7 @@ title: Miu_you の 树形DP
 date: 2020-03-23
 tags:
   - 算法学习
+cover: "images/post-images/1591512668067.jpg"
 ---
 
 ![](/images/post-images/1584943612772.jpg)

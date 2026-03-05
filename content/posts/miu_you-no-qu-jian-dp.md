@@ -3,6 +3,7 @@ title: Miu_you の 区间DP
 date: 2020-03-11
 tags:
   - 算法学习
+cover: "images/post-images/1584945867019.jpg"
 ---
 
 ![](/images/post-images/1583918620293.jpg)

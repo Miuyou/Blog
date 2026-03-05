@@ -1,6 +1,7 @@
 ---
 title: "[CTS2019]氪金手游"
 date: 2020-06-13
+cover: "images/hero/VRChat_2026-02-19_16-28-52.717_3840x2160.png"
 ---
 
 ![](/images/post-images/1592042663704.jpg)

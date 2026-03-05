@@ -1,6 +1,7 @@
 ---
 title: "[SCOI2015]小凸玩密室 解题报告"
 date: 2020-03-20
+cover: "images/post-images/miu_you-de-zi-fu-chuan.jpg"
 ---
 
 神仙dp orzorz

@@ -1,6 +1,7 @@
 ---
 title: Miu_you の 单调队列
 date: 2020-03-25
+cover: "images/post-images/1583748331912.png"
 ---
 
 * [P2219 [HAOI2007]修筑绿化带](https://www.luogu.com.cn/problem/P2219)

@@ -3,6 +3,7 @@ title: Miu_you の动态规划
 date: 2020-11-06
 tags:
   - 算法学习
+cover: "images/post-images/1601984663941.jpg"
 ---
 
 动态规划也炒鸡可爱的说!

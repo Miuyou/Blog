@@ -1,6 +1,7 @@
 ---
 title: 魔法世界
 date: 2020-10-08
+cover: "images/post-images/cts2019ke-jin-shou-you.jpg"
 ---
 
 ![](/images/post-images/1602154862437.jpg)

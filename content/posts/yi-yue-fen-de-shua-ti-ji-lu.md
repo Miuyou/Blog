@@ -3,6 +3,7 @@ title: 一月份的刷题记录
 date: 2020-03-23
 tags:
   - 做题计划
+cover: "images/post-images/miu_you-noxian-xing-ji.jpg"
 ---
 
 坑!好大的坑!要填的坑!

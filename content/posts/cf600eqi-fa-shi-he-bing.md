@@ -4,6 +4,7 @@ date: 2021-01-09
 tags:
   - 启发式合并
   - 数据结构
+cover: "images/hero/VRChat_2026-01-31_19-39-34.323_2560x1440.png"
 ---
 
 * [CF600E Lomsat gelral](https://www.luogu.com.cn/problem/CF600E)

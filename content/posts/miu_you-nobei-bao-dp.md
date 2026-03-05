@@ -3,6 +3,7 @@ title: Miu_you の进阶背包DP
 date: 2020-03-07
 tags:
   - 算法学习
+cover: "images/post-images/1598023464067.jpg"
 ---
 
 ![](/images/post-images/1583577043309.jpg)

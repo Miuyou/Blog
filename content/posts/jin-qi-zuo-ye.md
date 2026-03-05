@@ -1,6 +1,7 @@
 ---
 title: 近期作业
 date: 2020-06-14
+cover: "images/post-images/1583577021707.jpg"
 ---
 
 ![](/images/post-images/1592116460898.jpg)

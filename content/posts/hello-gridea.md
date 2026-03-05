@@ -1,6 +1,7 @@
 ---
 title: Hello Gridea
 date: 2018-12-12
+cover: "images/hero/home-bg.png"
 ---
 
 👏 欢迎使用 **Gridea** ！

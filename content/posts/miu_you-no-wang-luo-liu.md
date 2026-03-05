@@ -3,6 +3,7 @@ title: Miu_you の 网络流
 date: 2020-03-04
 tags:
   - 算法学习
+cover: "images/post-images/1591517369461.jpg"
 ---
 
 这里就是放放可爱の网络流的题目和感想啦~~~~~~~

@@ -1,6 +1,7 @@
 ---
 title: JXOI 2020游记
 date: 2020-06-07
+cover: "images/post-images/1583577043309.jpg"
 ---
 
 ![](/images/post-images/1591513011155.jpg)

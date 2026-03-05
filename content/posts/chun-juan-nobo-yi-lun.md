@@ -1,6 +1,7 @@
 ---
 title: 春卷の博弈论
 date: 2020-11-23
+cover: "images/hero/VRChat_2026-02-11_02-48-10.343_2560x1440.png"
 ---
 
 定义 Nim 和 $=a_1 \oplus a_2 \oplus \ldots \oplus a_n$ 。

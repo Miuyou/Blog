@@ -1,6 +1,7 @@
 ---
 title: APIO 系列
 date: 2020-08-21
+cover: "images/hero/VRChat_2026-01-13_01-01-05.123_2560x1440.png"
 ---
 
 ![](/images/post-images/1598023464067.jpg)
