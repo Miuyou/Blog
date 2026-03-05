@@ -5,7 +5,7 @@ tags:
   - BFS
   - 字符串
   - 解题报告
-cover: "images/post-images/1583391058067.jpg"
+cover: "images/hero/home-bg.png"
 ---
 
 * [P2322 [HNOI2006]最短母串问题](https://www.luogu.com.cn/problem/P2322)

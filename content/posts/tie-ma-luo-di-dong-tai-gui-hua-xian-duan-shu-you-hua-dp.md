@@ -5,7 +5,7 @@ tags:
   - 数据结构优化DP
   - 动态规划
   - 解题报告
-cover: "images/post-images/miu_you-no-zhuang-ya-dp.jpg"
+cover: "images/post-images/miu_you-de-zi-fu-chuan.jpg"
 ---
 
 * [P1442 铁球落地](https://www.luogu.com.cn/problem/P1442)

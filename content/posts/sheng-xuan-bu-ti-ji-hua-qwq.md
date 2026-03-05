@@ -3,11 +3,11 @@ title: 省选补题计划
 date: 2020-03-01
 tags:
   - 做题计划
-cover: "images/post-images/miu_you-no-shu-xing-bei-bao.jpg"
+cover: "images/post-images/heoi2016tjoi2016pai-xu-ti-jie.jpg"
 ---
 
 因为窝太弱了,所以决定把省选题都刷了!
-![](/images/post-images/1583297086560.jpg)
+![](../images/post-images/1583297086560.jpg)
 
 ##
 

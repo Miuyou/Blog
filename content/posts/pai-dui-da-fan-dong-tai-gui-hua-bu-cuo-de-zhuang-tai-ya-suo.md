@@ -6,7 +6,7 @@ tags:
   - 动态规划
   - 背包
   - 解题报告
-cover: "images/post-images/miu_you-cai-ji-ren-shi-de-shen-xian-men.png"
+cover: "images/post-images/1602143691333.png"
 ---
 
 * [P2157 [SDOI2009]学校食堂](https://www.luogu.com.cn/problem/P2157)

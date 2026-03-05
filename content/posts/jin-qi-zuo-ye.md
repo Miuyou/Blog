@@ -1,10 +1,10 @@
 ---
 title: 近期作业
 date: 2020-06-14
-cover: "images/post-images/1583577021707.jpg"
+cover: "images/post-images/1583297086560.jpg"
 ---
 
-![](/images/post-images/1592116460898.jpg)
+![](../images/post-images/1592116460898.jpg)
 
 数据结构:
 [神奇的合并](https://www.luogu.com.cn/problem/P5298)

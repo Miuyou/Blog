@@ -5,7 +5,7 @@ tags:
   - 优化建图
   - 数据结构
   - 解题报告
-cover: "images/hero/VRChat_2026-01-31_19-40-28.306_2560x1440.png"
+cover: "images/hero/VRChat_2026-01-31_19-39-34.323_2560x1440.png"
 ---
 
 * [CF786B Legacy](https://www.luogu.com.cn/problem/CF786B)

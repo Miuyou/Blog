@@ -1,10 +1,10 @@
 ---
 title: Miu_you の线性基
 date: 2020-06-07
-cover: "images/post-images/1601984806376.jpg"
+cover: "images/post-images/1591519415942.jpg"
 ---
 
-![](/images/post-images/1591519415942.jpg)
+![](../images/post-images/1591519415942.jpg)
 
 给定n个整数（数字可能重复），求在这些数中选取任意个，使得他们的异或和最大。
 这就是线性基要做的事情啦!

@@ -3,10 +3,10 @@ title: Miu_you の 区间DP
 date: 2020-03-11
 tags:
   - 算法学习
-cover: "images/post-images/1584945867019.jpg"
+cover: "images/post-images/1583577043309.jpg"
 ---
 
-![](/images/post-images/1583918620293.jpg)
+![](../images/post-images/1583918620293.jpg)
 
 区间DP就显得没那么有趣了,下面放一些做过的题就好啦
 

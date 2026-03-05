@@ -6,7 +6,7 @@ tags:
   - 动态规划
   - 背包
   - 解题报告
-cover: "images/post-images/1583297086560.jpg"
+cover: "images/hero/VRChat_2026-02-19_16-32-57.661_3840x2160.png"
 ---
 
 * [P2317 [HNOI2005]星际贸易](https://www.luogu.com.cn/problem/P2317)

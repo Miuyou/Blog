@@ -5,7 +5,7 @@ tags:
   - 动态规划
   - 背包
   - 解题报告
-cover: "images/hero/VRChat_2026-02-19_16-29-46.777_3840x2160.png"
+cover: "images/hero/VRChat_2026-02-19_16-28-52.717_3840x2160.png"
 ---
 
 * [P1285 队员分组](https://www.luogu.com.cn/problem/P1285)

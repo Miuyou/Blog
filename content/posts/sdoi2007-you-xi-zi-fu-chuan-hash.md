@@ -6,7 +6,7 @@ tags:
   - 字符串
   - 动态规划
   - 解题报告
-cover: "images/post-images/miu_you-no-qu-jian-dp.jpg"
+cover: "images/post-images/WallpaperEngineLockOverride_randomIVUSTT.jpg"
 ---
 
 * [P2462 [SDOI2007]游戏](https://www.luogu.com.cn/problem/P2462)

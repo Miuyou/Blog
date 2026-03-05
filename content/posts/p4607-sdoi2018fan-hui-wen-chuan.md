@@ -5,7 +5,7 @@ tags:
   - 数学
   - 质数
   - 解题报告
-cover: "images/post-images/jxoi-2020-you-ji.jpg"
+cover: "images/post-images/1601984806376.jpg"
 ---
 
 好nb啊,,首先摸一摸不可以的情况,然后列个狮子出来,大概就是枚举循环节长度去计算,大力反演,反演出来的结果加以计算就行了

@@ -3,11 +3,11 @@ title: Miu_you の动态规划
 date: 2020-11-06
 tags:
   - 算法学习
-cover: "images/post-images/1601984663941.jpg"
+cover: "images/post-images/1591517369461.jpg"
 ---
 
 动态规划也炒鸡可爱的说!
-![](/images/post-images/1583457992014.jpg)
+![](../images/post-images/1583457992014.jpg)
 
 欸,这篇废了,等所有子文章编辑完成了再来搞
 

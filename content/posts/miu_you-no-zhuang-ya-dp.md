@@ -3,10 +3,10 @@ title: Miu_you の 状压DP
 date: 2020-03-23
 tags:
   - 算法学习
-cover: "images/post-images/1592042663704.jpg"
+cover: "images/post-images/1584947480820.jpg"
 ---
 
-![](/images/post-images/1584947480820.jpg)
+![](../images/post-images/1584947480820.jpg)
 
 * [[HAOI2016]字符合并](https://loj.ac/problem/2063)
   其实主要是区间DP,想法比较简单,暴力区间合并即可,枚举一个断点,设状态为$f_{i,j,k}$表示为从i到j这一段的结果为$k$,因为满了$k$就会被消除所以可以得到一个上限长度来保证复杂度.如果刚好是(k-1)的倍数,那么计算求解即可.

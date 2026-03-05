@@ -1,10 +1,10 @@
 ---
 title: 摸鱼之路
 date: 2020-10-08
-cover: "images/post-images/hello-gridea.png"
+cover: "images/post-images/1598023464067.jpg"
 ---
 
-![](/images/post-images/1602143691333.png)
+![](../images/post-images/1602143691333.png)
 Ist das unser Schicksal oder unser Wille?
 
 日期2020/10/9-2020/10/9

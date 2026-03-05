@@ -3,10 +3,10 @@ title: Miu_you の 虚树
 date: 2020-03-23
 tags:
   - 算法学习
-cover: "images/post-images/1591605623747.jpg"
+cover: "images/post-images/1584945867019.jpg"
 ---
 
-![](/images/post-images/1584945867019.jpg)
+![](../images/post-images/1584945867019.jpg)
 
 关于虚树,若一个树中,窝们真正用得到且会变改变的点少,可以提出来重新建树,然后在这棵树上做树形DP,可以保证一个较低的复杂度
 

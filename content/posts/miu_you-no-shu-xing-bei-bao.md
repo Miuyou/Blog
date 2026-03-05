@@ -3,10 +3,10 @@ title: Miu_you の 树形DP
 date: 2020-03-23
 tags:
   - 算法学习
-cover: "images/post-images/1591512668067.jpg"
+cover: "images/post-images/1583715537254.jpg"
 ---
 
-![](/images/post-images/1584943612772.jpg)
+![](../images/post-images/1584943612772.jpg)
 
 * [P5898 [COCI 2015]Kamp](https://www.luogu.com.cn/problem/P5898)
   无法避免的以1为根进行DP,求出每个点的最长链,然后考虑转移答案到子节点,分类讨论,如果子节点的siz为0那么就叠加答案,如果在非最长链上答案不变,在最长链上移动的话最长链可能被改变,需要同时记录一个次长链来更新最长链

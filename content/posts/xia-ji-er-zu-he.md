@@ -1,7 +1,7 @@
 ---
 title: 瞎吉尔组合
 date: 2020-08-24
-cover: "images/post-images/miu_you-nobei-bao-dp.jpg"
+cover: "images/post-images/miu_you-no-qu-jian-dp.jpg"
 ---
 
 * [P3330 [ZJOI2011]看电影](https://www.luogu.com.cn/problem/P3330)

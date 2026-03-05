@@ -3,10 +3,10 @@ title: Miu_you の进阶背包DP
 date: 2020-03-07
 tags:
   - 算法学习
-cover: "images/post-images/1598023464067.jpg"
+cover: "images/post-images/1591513011155.jpg"
 ---
 
-![](/images/post-images/1583577043309.jpg)
+![](../images/post-images/1583577043309.jpg)
 > 即使是最普通的背包,也是非常值得深思的.
 
 ## 1.单调队列优化背包

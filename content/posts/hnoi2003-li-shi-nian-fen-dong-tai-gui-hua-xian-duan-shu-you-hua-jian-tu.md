@@ -6,7 +6,7 @@ tags:
   - 数据结构优化DP
   - 动态规划
   - 解题报告
-cover: "images/post-images/1583297071335.jpg"
+cover: "images/hero/VRChat_2026-02-19_16-31-27.571_3840x2160.png"
 ---
 
 * [P2282 [HNOI2003]历史年份](https://www.luogu.com.cn/problem/P2282)

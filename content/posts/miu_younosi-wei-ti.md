@@ -1,10 +1,10 @@
 ---
 title: Miu_youの思维题
 date: 2020-03-09
-cover: "images/post-images/1602154862437.jpg"
+cover: "images/post-images/1592042663704.jpg"
 ---
 
-![](/images/post-images/1583748331912.png)
+![](../images/post-images/1583748331912.png)
 
 恶心人不偿命的思维题,这里用来收录不知道放到哪里去的好题
 

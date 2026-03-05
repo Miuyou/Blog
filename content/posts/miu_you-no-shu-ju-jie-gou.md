@@ -1,10 +1,10 @@
 ---
 title: Miu_you の 数据结构
 date: 2020-03-30
-cover: "images/post-images/1584947480820.jpg"
+cover: "images/post-images/1583677126629.jpg"
 ---
 
-![](/images/post-images/1591605623747.jpg)
+![](../images/post-images/1591605623747.jpg)
 
 * [P4364 [九省联考2018]IIIDX](https://www.luogu.com.cn/problem/P4364)
   考虑在不重复的前提下可以怎么做,因为数值不重复,所以小点优先即可.

@@ -1,10 +1,10 @@
 ---
 title: 魔法世界
 date: 2020-10-08
-cover: "images/post-images/cts2019ke-jin-shou-you.jpg"
+cover: "images/post-images/1592116460898.jpg"
 ---
 
-![](/images/post-images/1602154862437.jpg)
+![](../images/post-images/1602154862437.jpg)
 OI世界的魔法真奇妙啊!
 
 * [技能树](#%E6%8A%80%E8%83%BD%E6%A0%91)
