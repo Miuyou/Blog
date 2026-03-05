@@ -1,7 +1,7 @@
 Put your homepage background image in this folder.
 
 Required filename:
-- `home-bg.jpg` (recommended)
+- `home-bg.png` (recommended)
 
 Example final path:
-- `static/images/hero/home-bg.jpg`
+- `static/images/hero/home-bg.png`
