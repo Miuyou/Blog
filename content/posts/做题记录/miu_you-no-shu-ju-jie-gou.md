@@ -1,6 +1,7 @@
 ---
 title: Miu_you の 数据结构
 date: 2020-03-30
+banner: "images/post-images/1583577043309.jpg"
 cover: "images/post-images/1583577043309.jpg"
 ---
 

@@ -6,6 +6,7 @@ tags:
   - 数据结构优化DP
   - 动态规划
   - 解题报告
+banner: "images/hero/VRChat_2026-02-19_16-31-27.571_3840x2160.png"
 cover: "images/hero/VRChat_2026-02-19_16-31-27.571_3840x2160.png"
 ---
 

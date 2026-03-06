@@ -3,6 +3,7 @@ title: Miu_you の 网络流
 date: 2020-03-04
 tags:
   - 算法学习
+banner: "images/post-images/jxoi-2020-you-ji.jpg"
 cover: "images/post-images/jxoi-2020-you-ji.jpg"
 ---
 

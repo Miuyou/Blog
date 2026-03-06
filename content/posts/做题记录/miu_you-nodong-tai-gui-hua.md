@@ -3,6 +3,7 @@ title: Miu_you の动态规划
 date: 2020-11-06
 tags:
   - 算法学习
+banner: "images/post-images/1584943612772.jpg"
 cover: "images/post-images/1584943612772.jpg"
 ---
 

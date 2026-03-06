@@ -99,12 +99,14 @@ while IFS=$'\t' read -r post img; do
     NR==1 && $0=="---" { in_fm=1; print; next }
     in_fm==1 {
       if ($0=="---") {
+        print "banner: \"" cover "\""
         print "cover: \"" cover "\""
         print
         in_fm=0
         next
       }
       if ($0 ~ /^cover:[[:space:]]*/) next
+      if ($0 ~ /^banner:[[:space:]]*/) next
       print
       next
     }
@@ -129,12 +131,14 @@ if [[ -n "${latest_post:-}" && -n "${latest_image:-}" ]]; then
     NR==1 && $0=="---" { in_fm=1; print; next }
     in_fm==1 {
       if ($0=="---") {
+        print "banner: \"" cover "\""
         print "cover: \"" cover "\""
         print
         in_fm=0
         next
       }
       if ($0 ~ /^cover:[[:space:]]*/) next
+      if ($0 ~ /^banner:[[:space:]]*/) next
       print
       next
     }

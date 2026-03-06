@@ -1,6 +1,7 @@
 ---
 title: Miu_you の 数学知识
 date: 2020-11-04
+banner: "images/post-images/heoi2016tjoi2016pai-xu-ti-jie.jpg"
 cover: "images/post-images/heoi2016tjoi2016pai-xu-ti-jie.jpg"
 ---
 

@@ -5,6 +5,7 @@ tags:
   - 数据结构优化DP
   - 动态规划
   - 解题报告
+banner: "images/post-images/1602143691333.png"
 cover: "images/post-images/1602143691333.png"
 ---
 

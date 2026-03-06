@@ -1,6 +1,7 @@
 ---
 title: 瞎吉尔组合
 date: 2020-08-24
+banner: "images/post-images/1602154862437.jpg"
 cover: "images/post-images/1602154862437.jpg"
 ---
 

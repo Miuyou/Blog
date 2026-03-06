@@ -1,6 +1,7 @@
 ---
 title: Miu_you の 斜率/单调性等优化
 date: 2020-04-03
+banner: "images/post-images/1583715537254.jpg"
 cover: "images/post-images/1583715537254.jpg"
 ---
 

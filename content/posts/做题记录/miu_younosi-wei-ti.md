@@ -1,6 +1,7 @@
 ---
 title: Miu_youの思维题
 date: 2020-03-09
+banner: "images/post-images/1584947480820.jpg"
 cover: "images/post-images/1584947480820.jpg"
 ---
 

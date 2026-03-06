@@ -6,6 +6,7 @@ tags:
   - 动态规划
   - 背包
   - 解题报告
+banner: "images/hero/VRChat_2026-02-19_16-32-57.661_3840x2160.png"
 cover: "images/hero/VRChat_2026-02-19_16-32-57.661_3840x2160.png"
 ---
 

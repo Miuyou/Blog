@@ -6,6 +6,7 @@ tags:
   - 矩阵
   - 动态规划
   - 解题报告
+banner: "images/post-images/1583297071335.jpg"
 cover: "images/post-images/1583297071335.jpg"
 ---
 

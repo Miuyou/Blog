@@ -3,6 +3,7 @@ title: 一月份的刷题记录
 date: 2020-03-23
 tags:
   - 做题计划
+banner: "images/post-images/WallpaperEngineLockOverride_randomIVUSTT.jpg"
 cover: "images/post-images/WallpaperEngineLockOverride_randomIVUSTT.jpg"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 摸鱼之路
 date: 2020-10-08
+banner: "images/post-images/1591512668067.jpg"
 cover: "images/post-images/1591512668067.jpg"
 ---
 

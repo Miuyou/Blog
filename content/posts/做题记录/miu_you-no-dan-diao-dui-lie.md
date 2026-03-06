@@ -1,6 +1,7 @@
 ---
 title: Miu_you の 单调队列
 date: 2020-03-25
+banner: "images/post-images/1583391593712.jpg"
 cover: "images/post-images/1583391593712.jpg"
 ---
 

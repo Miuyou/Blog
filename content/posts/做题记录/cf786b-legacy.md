@@ -5,6 +5,7 @@ tags:
   - 优化建图
   - 数据结构
   - 解题报告
+banner: "images/hero/VRChat_2026-01-31_19-39-34.323_2560x1440.png"
 cover: "images/hero/VRChat_2026-01-31_19-39-34.323_2560x1440.png"
 ---
 

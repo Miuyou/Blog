@@ -5,6 +5,7 @@ tags:
   - 数据结构优化DP
   - 动态规划
   - 解题报告
+banner: "images/post-images/cts2019ke-jin-shou-you.jpg"
 cover: "images/post-images/cts2019ke-jin-shou-you.jpg"
 ---
 

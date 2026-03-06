@@ -5,6 +5,7 @@ tags:
   - 状态压缩
   - 动态规划
   - 解题报告
+banner: "images/hero/VRChat_2026-02-19_16-29-01.762_3840x2160.png"
 cover: "images/hero/VRChat_2026-02-19_16-29-01.762_3840x2160.png"
 ---
 

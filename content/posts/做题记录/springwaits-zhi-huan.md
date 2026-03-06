@@ -4,6 +4,7 @@ date: 2020-12-23
 tags:
   - 置换
   - 算法学习
+banner: "images/post-images/1601984806376.jpg"
 cover: "images/post-images/1601984806376.jpg"
 ---
 

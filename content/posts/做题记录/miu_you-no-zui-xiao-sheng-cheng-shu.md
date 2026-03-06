@@ -1,6 +1,7 @@
 ---
 title: Miu_you の 最小生成树
 date: 2020-03-08
+banner: "images/post-images/1583918620293.jpg"
 cover: "images/post-images/1583918620293.jpg"
 ---
 

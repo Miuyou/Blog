@@ -6,6 +6,7 @@ tags:
   - 字符串
   - 动态规划
   - 解题报告
+banner: "images/post-images/1592042663704.jpg"
 cover: "images/post-images/1592042663704.jpg"
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: 近期作业
 date: 2020-06-14
+banner: "images/post-images/1583297086560.jpg"
 cover: "images/post-images/1583297086560.jpg"
 ---
 

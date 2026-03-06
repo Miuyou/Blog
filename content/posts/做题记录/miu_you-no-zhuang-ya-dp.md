@@ -3,6 +3,7 @@ title: Miu_you の 状压DP
 date: 2020-03-23
 tags:
   - 算法学习
+banner: "images/post-images/1583748331912.png"
 cover: "images/post-images/1583748331912.png"
 ---
 

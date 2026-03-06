@@ -3,6 +3,7 @@ title: "[HEOI2016/TJOI2016]排序 题解"
 date: 2020-02-27
 tags:
   - 解题报告
+banner: "images/hero/VRChat_2026-02-19_16-29-46.777_3840x2160.png"
 cover: "images/hero/VRChat_2026-02-19_16-29-46.777_3840x2160.png"
 ---
 

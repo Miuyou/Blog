@@ -1,6 +1,7 @@
 ---
 title: Miu_you の线性基
 date: 2020-06-07
+banner: "images/post-images/1584945867019.jpg"
 cover: "images/post-images/1584945867019.jpg"
 ---
 

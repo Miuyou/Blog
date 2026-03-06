@@ -5,6 +5,7 @@ tags:
   - BFS
   - 字符串
   - 解题报告
+banner: "images/hero/home-bg.png"
 cover: "images/hero/home-bg.png"
 ---
 

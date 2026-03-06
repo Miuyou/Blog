@@ -3,6 +3,7 @@ title: 省选补题计划
 date: 2020-03-01
 tags:
   - 做题计划
+banner: "images/post-images/1598023464067.jpg"
 cover: "images/post-images/1598023464067.jpg"
 ---
 
