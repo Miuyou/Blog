@@ -85,3 +85,11 @@ params:
     powered: true
     count: true
     busuanzi: true
+
+  injector:
+    head_end: |
+      <link rel="icon" type="image/png" href="/Blog/avatar/avatar.png">
+      <link rel="apple-touch-icon" href="/Blog/avatar/avatar.png">
+      <link rel="stylesheet" href="/Blog/css/custom.css">
+    body_end: |
+      <script defer src="/Blog/js/archive-filter.js"></script>

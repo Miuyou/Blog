@@ -1,0 +1,105 @@
+{{- define "main" -}}
+  {{- $pageSize := 0 -}}
+  {{- with $.Site.Params.paginate.archive -}}
+    {{- $pageSize = . -}}
+  {{- end -}}
+
+  {{- $basePages := where .Site.RegularPages "Section" "in" .Site.Params.mainSections -}}
+  {{- $paginator := "" -}}
+  {{- if gt $pageSize 0 -}}
+    {{- $paginator = .Paginate $basePages $pageSize -}}
+  {{- else -}}
+    {{- $paginator = .Paginate $basePages -}}
+  {{- end -}}
+
+  {{- $yearGroups := $paginator.Pages.GroupByDate .Site.Params.yearFormat "desc" -}}
+  {{- $categoryPriority := slice "算法" "随想" "做题记录" -}}
+
+  <div class="archives-outer-wrap" data-aos="{{ .Site.Params.animation.options.archive.whole }}">
+    {{- if .Site.Params.only_show_capsule_in_index -}}
+      {{- if eq .Paginator.PageNumber 1 -}}
+        {{- partialCached "archives.html" . -}}
+      {{- end -}}
+    {{- else -}}
+      {{- partialCached "archives.html" . -}}
+    {{- end -}}
+
+    {{- range $yearGroups -}}
+      <section class="archives-wrap" data-aos="{{ $.Site.Params.animation.options.archive.section }}">
+        <div class="archive-year-wrap">
+          <span class="archive-year">{{ .Key }}</span>
+        </div>
+        <ul>
+          {{- $yearPages := .Pages.ByDate.Reverse -}}
+
+          {{- range $cat := $categoryPriority -}}
+            {{- range $yearPages -}}
+              {{- $category := "未分类" -}}
+              {{- with .File -}}
+                {{- $relativeDir := strings.TrimPrefix "posts/" (strings.TrimSuffix "/" .Dir) -}}
+                {{- if ne $relativeDir "" -}}
+                  {{- $parts := split $relativeDir "/" -}}
+                  {{- if gt (len $parts) 0 -}}
+                    {{- $category = index $parts 0 -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+              {{- if and (eq $category "未分类") (.Params.categories) -}}
+                {{- $category = index .Params.categories 0 -}}
+              {{- end -}}
+
+              {{- if eq $category $cat -}}
+                <li class="archive-article" data-post-category="{{ $category }}">
+                  <div class="archive-article-date">
+                    <span>
+                      <time class="dt-published" datetime="{{ .Date }}" itemprop="datePublished">{{ .Date.Format $.Site.Params.monthFormat }}</time>
+                    </span>
+                  </div>
+                  {{- if .Params.link -}}
+                    <a class="archive-article-title" href="{{ .Params.link }}" target="_blank" itemprop="url" rel="noopener nofollow noreferrer">{{ .Title }}</a>
+                  {{- else if .Title -}}
+                    <a class="archive-article-title" href="{{ .Permalink | relURL }}">{{ .Title }}</a>
+                  {{- end -}}
+                  <span class="archive-article-category">{{ $category }}</span>
+                </li>
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- range $yearPages -}}
+            {{- $category := "未分类" -}}
+            {{- with .File -}}
+              {{- $relativeDir := strings.TrimPrefix "posts/" (strings.TrimSuffix "/" .Dir) -}}
+              {{- if ne $relativeDir "" -}}
+                {{- $parts := split $relativeDir "/" -}}
+                {{- if gt (len $parts) 0 -}}
+                  {{- $category = index $parts 0 -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+            {{- if and (eq $category "未分类") (.Params.categories) -}}
+              {{- $category = index .Params.categories 0 -}}
+            {{- end -}}
+
+            {{- if not (in $categoryPriority $category) -}}
+              <li class="archive-article" data-post-category="{{ $category }}">
+                <div class="archive-article-date">
+                  <span>
+                    <time class="dt-published" datetime="{{ .Date }}" itemprop="datePublished">{{ .Date.Format $.Site.Params.monthFormat }}</time>
+                  </span>
+                </div>
+                {{- if .Params.link -}}
+                  <a class="archive-article-title" href="{{ .Params.link }}" target="_blank" itemprop="url" rel="noopener nofollow noreferrer">{{ .Title }}</a>
+                {{- else if .Title -}}
+                  <a class="archive-article-title" href="{{ .Permalink | relURL }}">{{ .Title }}</a>
+                {{- end -}}
+                <span class="archive-article-category">{{ $category }}</span>
+              </li>
+            {{- end -}}
+          {{- end -}}
+        </ul>
+      </section>
+    {{- end -}}
+  </div>
+  {{- partial "pagination.html" . -}}
+{{- end -}}
