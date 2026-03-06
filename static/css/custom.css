@@ -62,6 +62,41 @@ body.list {
   display: none !important;
 }
 
+.home-filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--color-wrap);
+  box-shadow: var(--shadow-meta);
+}
+
+.home-filter-option {
+  border: 1px solid var(--color-h2-border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  color: var(--color-default);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.home-filter-option:hover {
+  border-color: var(--red-1);
+  background: var(--red-5);
+}
+
+.home-filter-option.is-active {
+  border-color: var(--red-1);
+  background: var(--red-5);
+  color: var(--red-0);
+}
+
+.home-post-item-hidden {
+  display: none !important;
+}
+
 @media (max-width: 991px) {
   .archive-filter-panel {
     margin-top: 12px;

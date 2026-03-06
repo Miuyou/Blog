@@ -1,56 +1,94 @@
 (() => {
   const FILTER_PARAM = "category";
 
-  const applyFilter = (category, root) => {
-    const items = Array.from(document.querySelectorAll(".archive-article[data-post-category]"));
-    const wraps = Array.from(document.querySelectorAll(".archives-wrap"));
-
-    items.forEach((item) => {
-      const current = item.getAttribute("data-post-category") || "";
-      const show = category === "all" || current === category;
-      item.classList.toggle("archive-article-hidden", !show);
+  const syncButtons = (root, attrName, selected) => {
+    Array.from(root.querySelectorAll(`[${attrName}]`)).forEach((button) => {
+      const active = button.getAttribute(attrName) === selected;
+      button.classList.toggle("is-active", active);
     });
-
-    wraps.forEach((wrap) => {
-      const hasVisibleItem = wrap.querySelector(".archive-article:not(.archive-article-hidden)");
-      wrap.classList.toggle("archives-wrap-hidden", !hasVisibleItem);
-    });
-
-    Array.from(root.querySelectorAll("[data-archive-filter]")).forEach((button) => {
-      const selected = button.getAttribute("data-archive-filter") === category;
-      button.classList.toggle("is-active", selected);
-    });
-
-    const url = new URL(window.location.href);
-    if (category === "all") {
-      url.searchParams.delete(FILTER_PARAM);
-    } else {
-      url.searchParams.set(FILTER_PARAM, category);
-    }
-    window.history.replaceState({}, "", url.toString());
   };
 
   const initArchiveFilter = () => {
     const root = document.querySelector("[data-archive-filter-menu]");
-    if (!root) return;
-    if (root.getAttribute("data-archive-filter-bound") === "1") return;
-    root.setAttribute("data-archive-filter-bound", "1");
+    if (!root || root.getAttribute("data-filter-bound") === "1") return;
+    root.setAttribute("data-filter-bound", "1");
 
     const buttons = Array.from(root.querySelectorAll("[data-archive-filter]"));
-    if (!buttons.length) return;
+    const items = Array.from(document.querySelectorAll(".archive-article[data-post-category]"));
+    const wraps = Array.from(document.querySelectorAll(".archives-wrap"));
+    if (!buttons.length || !items.length) return;
+
+    const apply = (category) => {
+      items.forEach((item) => {
+        const current = item.getAttribute("data-post-category") || "";
+        const show = category === "all" || current === category;
+        item.classList.toggle("archive-article-hidden", !show);
+      });
+
+      wraps.forEach((wrap) => {
+        const hasVisibleItem = wrap.querySelector(".archive-article:not(.archive-article-hidden)");
+        wrap.classList.toggle("archives-wrap-hidden", !hasVisibleItem);
+      });
+
+      syncButtons(root, "data-archive-filter", category);
+    };
 
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         const category = button.getAttribute("data-archive-filter") || "all";
-        applyFilter(category, root);
+        apply(category);
       });
     });
 
     const fromQuery = new URLSearchParams(window.location.search).get(FILTER_PARAM) || "all";
-    const isValid = buttons.some((button) => button.getAttribute("data-archive-filter") === fromQuery);
-    applyFilter(isValid ? fromQuery : "all", root);
+    const valid = buttons.some((b) => b.getAttribute("data-archive-filter") === fromQuery);
+    apply(valid ? fromQuery : "all");
   };
 
-  window.addEventListener("DOMContentLoaded", initArchiveFilter);
-  window.addEventListener("pjax:complete", initArchiveFilter);
+  const initHomeFilter = () => {
+    const root = document.querySelector("[data-home-filter-menu]");
+    if (!root || root.getAttribute("data-filter-bound") === "1") return;
+    root.setAttribute("data-filter-bound", "1");
+
+    const buttons = Array.from(root.querySelectorAll("[data-home-filter]"));
+    const items = Array.from(document.querySelectorAll(".home-post-item[data-post-category]"));
+    if (!buttons.length || !items.length) return;
+
+    const apply = (category) => {
+      items.forEach((item) => {
+        const current = item.getAttribute("data-post-category") || "";
+        const show = category === "all" || current === category;
+        item.classList.toggle("home-post-item-hidden", !show);
+      });
+
+      syncButtons(root, "data-home-filter", category);
+
+      const url = new URL(window.location.href);
+      if (category === "all") {
+        url.searchParams.delete(FILTER_PARAM);
+      } else {
+        url.searchParams.set(FILTER_PARAM, category);
+      }
+      window.history.replaceState({}, "", url.toString());
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.getAttribute("data-home-filter") || "all";
+        apply(category);
+      });
+    });
+
+    const fromQuery = new URLSearchParams(window.location.search).get(FILTER_PARAM) || "all";
+    const valid = buttons.some((b) => b.getAttribute("data-home-filter") === fromQuery);
+    apply(valid ? fromQuery : "all");
+  };
+
+  const boot = () => {
+    initArchiveFilter();
+    initHomeFilter();
+  };
+
+  window.addEventListener("DOMContentLoaded", boot);
+  window.addEventListener("pjax:complete", boot);
 })();

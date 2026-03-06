@@ -1,0 +1,106 @@
+{{- define "main" -}}
+  {{- $ctx := . -}}
+  {{- $pageSize := 0 -}}
+  {{- with $.Site.Params.paginate.post -}}
+    {{- $pageSize = . -}}
+  {{- end -}}
+  {{- $paginator := "" -}}
+  {{- if gt $pageSize 0 -}}
+    {{- $paginator = .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) $pageSize -}}
+  {{- else -}}
+    {{- $paginator = .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) -}}
+  {{- end -}}
+
+  {{- if eq 1 $paginator.PageNumber -}}
+    <div class="home-filter-panel" data-home-filter-menu>
+      <button class="home-filter-option is-active" type="button" data-home-filter="all">全部</button>
+      <button class="home-filter-option" type="button" data-home-filter="算法">算法</button>
+      <button class="home-filter-option" type="button" data-home-filter="随想">随想</button>
+      <button class="home-filter-option" type="button" data-home-filter="做题记录">做题记录</button>
+    </div>
+  {{- end -}}
+
+  {{- $sort_config := .Site.Params.sort_order.home -}}
+  {{- if eq $sort_config "weight" -}}
+    {{- range $k, $v := $paginator.Pages.ByWeight -}}
+      {{- $category := "未分类" -}}
+      {{- with $v.File -}}
+        {{- $relativeDir := strings.TrimPrefix "posts/" (strings.TrimSuffix "/" .Dir) -}}
+        {{- if ne $relativeDir "" -}}
+          {{- $parts := split $relativeDir "/" -}}
+          {{- if gt (len $parts) 0 -}}
+            {{- $category = index $parts 0 -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      <div class="home-post-item" data-post-category="{{ $category }}">
+        {{- partial "post.html"  (dict "index" $k "ctx" . "page" $v ) -}}
+      </div>
+    {{- end -}}
+  {{- else if eq $sort_config "weight-reverse" -}}
+    {{- range $k, $v := $paginator.Pages.ByWeight.Reverse -}}
+      {{- $category := "未分类" -}}
+      {{- with $v.File -}}
+        {{- $relativeDir := strings.TrimPrefix "posts/" (strings.TrimSuffix "/" .Dir) -}}
+        {{- if ne $relativeDir "" -}}
+          {{- $parts := split $relativeDir "/" -}}
+          {{- if gt (len $parts) 0 -}}
+            {{- $category = index $parts 0 -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      <div class="home-post-item" data-post-category="{{ $category }}">
+        {{- partial "post.html"  (dict "index" $k "ctx" . "page" $v ) -}}
+      </div>
+    {{- end -}}
+  {{- else if eq $sort_config "date" -}}
+    {{- range $k, $v := $paginator.Pages.ByDate -}}
+      {{- $category := "未分类" -}}
+      {{- with $v.File -}}
+        {{- $relativeDir := strings.TrimPrefix "posts/" (strings.TrimSuffix "/" .Dir) -}}
+        {{- if ne $relativeDir "" -}}
+          {{- $parts := split $relativeDir "/" -}}
+          {{- if gt (len $parts) 0 -}}
+            {{- $category = index $parts 0 -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      <div class="home-post-item" data-post-category="{{ $category }}">
+        {{- partial "post.html" (dict "index" $k "ctx" . "page" $v ) -}}
+      </div>
+    {{- end -}}
+  {{- else if eq $sort_config "date-reverse" -}}
+    {{- range $k, $v := $paginator.Pages.ByDate.Reverse -}}
+      {{- $category := "未分类" -}}
+      {{- with $v.File -}}
+        {{- $relativeDir := strings.TrimPrefix "posts/" (strings.TrimSuffix "/" .Dir) -}}
+        {{- if ne $relativeDir "" -}}
+          {{- $parts := split $relativeDir "/" -}}
+          {{- if gt (len $parts) 0 -}}
+            {{- $category = index $parts 0 -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      <div class="home-post-item" data-post-category="{{ $category }}">
+        {{- partial "post.html" (dict "index" $k "ctx" . "page" $v ) -}}
+      </div>
+    {{- end -}}
+  {{- else if eq $sort_config "default" -}}
+    {{- range $k, $v := $paginator.Pages -}}
+      {{- $category := "未分类" -}}
+      {{- with $v.File -}}
+        {{- $relativeDir := strings.TrimPrefix "posts/" (strings.TrimSuffix "/" .Dir) -}}
+        {{- if ne $relativeDir "" -}}
+          {{- $parts := split $relativeDir "/" -}}
+          {{- if gt (len $parts) 0 -}}
+            {{- $category = index $parts 0 -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      <div class="home-post-item" data-post-category="{{ $category }}">
+        {{- partial "post.html"  (dict "index" $k "ctx" . "page" $v ) -}}
+      </div>
+    {{- end -}}
+  {{- end -}}
+  {{- partial "pagination.html" . -}}
+{{- end -}}

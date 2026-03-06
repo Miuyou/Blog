@@ -55,10 +55,6 @@ params:
       url: "archives"
     - name: tag
       url: "tags"
-    - name: about
-      url: "about"
-    - name: friend
-      url: "friend"
 
   mainSections:
     - posts

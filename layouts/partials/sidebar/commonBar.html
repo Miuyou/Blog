@@ -76,13 +76,3 @@
   {{- end -}}
 </div>
 {{- end -}}
-
-{{- if eq .ctx.Type "archives" -}}
-  <div class="archive-filter-panel" data-archive-filter-menu>
-    <div class="archive-filter-panel-title">归档筛选</div>
-    <button class="archive-filter-option is-active" type="button" data-archive-filter="all">全部</button>
-    <button class="archive-filter-option" type="button" data-archive-filter="算法">算法</button>
-    <button class="archive-filter-option" type="button" data-archive-filter="随想">随想</button>
-    <button class="archive-filter-option" type="button" data-archive-filter="做题记录">做题记录</button>
-  </div>
-{{- end -}}
