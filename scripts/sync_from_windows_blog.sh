@@ -47,6 +47,7 @@ if [[ -d "$ROOT_IMAGES_SRC" ]]; then
     | rg -i '\.(png|jpg|jpeg|webp|gif)$' \
     | while IFS= read -r img; do
         cp -f "$img" "$ROOT_IMAGES_DST"/
+        chmod 644 "$ROOT_IMAGES_DST/$(basename "$img")"
       done
 fi
 
