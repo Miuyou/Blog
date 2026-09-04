@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import PostCard from '../../components/PostCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { comparePosts } from '../../lib/posts';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comparePosts);
+---
+
+<BaseLayout title="全部文章" description={`Spring Blog 的全部 ${posts.length} 篇文章。`}>
+  <div class="shell narrow page-section">
+    <header class="page-heading">
+      <p class="eyebrow">ALL POSTS</p>
+      <h1>全部文章</h1>
+      <p>共 {posts.length} 篇，记录算法、学习与生活。</p>
+    </header>
+    <section class="post-list" aria-label="文章列表">
+      {posts.map((post) => <PostCard post={post} />)}
+    </section>
+  </div>
+</BaseLayout>

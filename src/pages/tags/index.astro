@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+const counts = [...posts.reduce((map, post) => {
+  for (const tag of post.data.tags) map.set(tag, (map.get(tag) ?? 0) + 1);
+  return map;
+}, new Map<string, number>()).entries()].sort(([a], [b]) => a.localeCompare(b, 'zh-CN'));
+---
+
+<BaseLayout title="标签" description="按标签浏览 Spring Blog 的文章。">
+  <div class="shell narrow page-section">
+    <header class="page-heading">
+      <p class="eyebrow">TAGS</p>
+      <h1>标签</h1>
+      <p>从主题线索进入文章。</p>
+    </header>
+    <div class="term-grid">
+      {counts.map(([tag, count]) => (
+        <a href={`/tags/${tag}/`}><span>#{tag}</span><small>{count} 篇</small></a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

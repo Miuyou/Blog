@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import PostCard from '../components/PostCard.astro';
+import { SITE } from '../config';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { comparePosts } from '../lib/posts';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comparePosts);
+const categoryCounts = Object.entries(
+  posts.reduce<Record<string, number>>((counts, post) => {
+    counts[post.data.category] = (counts[post.data.category] ?? 0) + 1;
+    return counts;
+  }, {}),
+);
+---
+
+<BaseLayout hero>
+  <div class="shell home-grid">
+    <section class="post-list" aria-labelledby="latest-posts">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">RECENT WRITING</p>
+          <h1 id="latest-posts">最新文章</h1>
+        </div>
+        <a href="/posts/">查看全部 {posts.length} 篇</a>
+      </div>
+      {posts.slice(0, 12).map((post) => <PostCard post={post} />)}
+    </section>
+
+    <aside class="author-panel" aria-label="作者信息">
+      <img src={SITE.avatar} width="112" height="112" alt={SITE.author} />
+      <h2>{SITE.author}</h2>
+      <p>{SITE.description}</p>
+      <dl>
+        <div><dt>文章</dt><dd>{posts.length}</dd></div>
+        <div><dt>分类</dt><dd>{categoryCounts.length}</dd></div>
+      </dl>
+      <div class="category-links">
+        {categoryCounts.map(([category, count]) => (
+          <a href={`/categories/${category}/`}>
+            <span>{category}</span><small>{count}</small>
+          </a>
+        ))}
+      </div>
+      <a class="text-link" href={SITE.github} rel="me">GitHub ↗</a>
+    </aside>
+  </div>
+</BaseLayout>

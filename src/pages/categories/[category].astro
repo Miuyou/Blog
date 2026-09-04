@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import PostCard from '../../components/PostCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { comparePosts } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const categories = [...new Set(posts.map((post) => post.data.category))];
+
+  return categories.map((category) => ({
+    params: { category },
+    props: { posts: posts.filter((post) => post.data.category === category).sort(comparePosts) },
+  }));
+}
+
+const { category } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout title={`分类：${category}`} description={`Spring Blog 的“${category}”分类文章。`}>
+  <div class="shell narrow page-section">
+    <header class="page-heading">
+      <p class="eyebrow">CATEGORY</p>
+      <h1>{category}</h1>
+      <p>{posts.length} 篇文章</p>
+    </header>
+    <section class="post-list" aria-label={`${category}分类下的文章`}>
+      {posts.map((post) => <PostCard post={post} />)}
+    </section>
+  </div>
+</BaseLayout>

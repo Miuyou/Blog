@@ -1,0 +1,16 @@
+---
+import { SITE } from '../config';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <p>© 2019–{year} {SITE.author}</p>
+    <p>
+      <a href="/index.xml">RSS</a>
+      <span aria-hidden="true">·</span>
+      <a href={SITE.github} rel="me">GitHub</a>
+    </p>
+  </div>
+</footer>
