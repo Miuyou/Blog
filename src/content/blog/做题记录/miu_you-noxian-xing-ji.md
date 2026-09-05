@@ -2,7 +2,7 @@
 title: Miu_you の线性基
 pubDate: 2020-06-07
 category: "做题记录"
-cover: "/images/post-images/1584945867019.jpg"
+cover: "/images/optimized/post-images/1584945867019.webp"
 draft: false
 ---
 

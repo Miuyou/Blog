@@ -4,7 +4,7 @@ pubDate: 2020-02-27
 category: "做题记录"
 tags:
   - 解题报告
-cover: "/images/hero/VRChat_2026-02-19_16-29-46.777_3840x2160.png"
+cover: "/images/optimized/hero/VRChat_2026-02-19_16-29-46.777_3840x2160.webp"
 draft: false
 ---
 

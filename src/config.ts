@@ -4,7 +4,6 @@ export const SITE = {
   author: 'Spring',
   subtitle: '你好，我是 Spring',
   github: 'https://github.com/Miuyou',
-  hero: '/images/hero/home-bg.png',
+  hero: '/images/optimized/hero/home-bg.webp',
   avatar: '/avatar/avatar.png',
-  locale: 'zh-CN',
 } as const;

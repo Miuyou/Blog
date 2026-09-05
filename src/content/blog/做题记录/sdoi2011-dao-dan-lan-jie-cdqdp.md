@@ -7,7 +7,7 @@ tags:
   - 数据结构
   - 动态规划
   - 解题报告
-cover: "/images/post-images/1592116460898.jpg"
+cover: "/images/optimized/post-images/1592116460898.webp"
 draft: false
 ---
 

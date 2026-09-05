@@ -2,7 +2,7 @@
 title: Miu_you の最小斯坦纳树
 pubDate: 2020-03-26
 category: "算法"
-cover: "/images/post-images/miu_you-no-qu-jian-dp.jpg"
+cover: "/images/optimized/post-images/miu_you-no-qu-jian-dp.webp"
 draft: false
 ---
 

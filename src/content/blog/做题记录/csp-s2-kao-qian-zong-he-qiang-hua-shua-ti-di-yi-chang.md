@@ -2,7 +2,7 @@
 title: CSP-S2考前综合强化刷题（第一场）
 pubDate: 2020-10-01
 category: "做题记录"
-cover: "/images/hero/VRChat_2026-02-11_02-48-10.343_2560x1440.png"
+cover: "/images/optimized/hero/VRChat_2026-02-11_02-48-10.343_2560x1440.webp"
 draft: false
 ---
 

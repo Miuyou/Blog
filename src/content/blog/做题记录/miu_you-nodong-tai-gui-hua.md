@@ -4,7 +4,7 @@ pubDate: 2020-11-06
 category: "做题记录"
 tags:
   - 算法学习
-cover: "/images/post-images/1584943612772.jpg"
+cover: "/images/optimized/post-images/1584943612772.webp"
 draft: false
 ---
 

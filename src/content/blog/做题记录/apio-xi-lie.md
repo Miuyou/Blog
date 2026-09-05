@@ -2,7 +2,7 @@
 title: APIO 系列
 pubDate: 2020-08-21
 category: "做题记录"
-cover: "/images/hero/VRChat_2026-01-13_00-58-58.459_2560x1440.png"
+cover: "/images/optimized/hero/VRChat_2026-01-13_00-58-58.459_2560x1440.webp"
 draft: false
 ---
 

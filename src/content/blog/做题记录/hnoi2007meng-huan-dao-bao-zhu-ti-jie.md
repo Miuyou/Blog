@@ -4,7 +4,7 @@ pubDate: 2020-03-09
 category: "做题记录"
 tags:
   - 解题报告
-cover: "/images/post-images/1583294990170.jpg"
+cover: "/images/optimized/post-images/1583294990170.webp"
 draft: false
 ---
 

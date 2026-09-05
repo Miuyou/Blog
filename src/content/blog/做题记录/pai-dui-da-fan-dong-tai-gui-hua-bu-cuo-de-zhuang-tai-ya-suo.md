@@ -7,7 +7,7 @@ tags:
   - 动态规划
   - 背包
   - 解题报告
-cover: "/images/post-images/1591519415942.jpg"
+cover: "/images/optimized/post-images/1591519415942.webp"
 draft: false
 ---
 

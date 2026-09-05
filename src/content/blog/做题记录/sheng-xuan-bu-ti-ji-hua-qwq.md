@@ -4,7 +4,7 @@ pubDate: 2020-03-01
 category: "做题记录"
 tags:
   - 做题计划
-cover: "/images/post-images/1598023464067.jpg"
+cover: "/images/optimized/post-images/1598023464067.webp"
 draft: false
 ---
 

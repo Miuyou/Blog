@@ -4,7 +4,7 @@ pubDate: 2020-03-07
 category: "算法"
 tags:
   - 算法学习
-cover: "/images/post-images/miu_you-de-zi-fu-chuan.jpg"
+cover: "/images/optimized/post-images/miu_you-de-zi-fu-chuan.webp"
 draft: false
 ---
 

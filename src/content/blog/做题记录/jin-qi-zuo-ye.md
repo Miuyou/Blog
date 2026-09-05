@@ -2,7 +2,7 @@
 title: 近期作业
 pubDate: 2020-06-14
 category: "做题记录"
-cover: "/images/post-images/1583297086560.jpg"
+cover: "/images/optimized/post-images/1583297086560.webp"
 draft: false
 ---
 

@@ -2,7 +2,7 @@
 title: "[CTS2019]氪金手游"
 pubDate: 2020-06-13
 category: "做题记录"
-cover: "/images/hero/VRChat_2026-02-19_16-28-27.461_3840x2160.png"
+cover: "/images/optimized/hero/VRChat_2026-02-19_16-28-27.461_3840x2160.webp"
 draft: false
 ---
 

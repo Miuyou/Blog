@@ -2,7 +2,7 @@
 title: 春卷の博弈论
 pubDate: 2020-11-23
 category: "做题记录"
-cover: "/images/hero/VRChat_2026-01-31_19-40-28.306_2560x1440.png"
+cover: "/images/optimized/hero/VRChat_2026-01-31_19-40-28.306_2560x1440.webp"
 draft: false
 ---
 

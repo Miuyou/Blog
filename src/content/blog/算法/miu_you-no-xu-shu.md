@@ -4,7 +4,7 @@ pubDate: 2020-03-23
 category: "算法"
 tags:
   - 算法学习
-cover: "/images/post-images/miu_you-cai-ji-ren-shi-de-shen-xian-men.png"
+cover: "/images/optimized/post-images/miu_you-cai-ji-ren-shi-de-shen-xian-men.webp"
 draft: false
 ---
 

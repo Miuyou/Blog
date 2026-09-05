@@ -2,7 +2,7 @@
 title: 摸鱼之路
 pubDate: 2020-10-08
 category: "做题记录"
-cover: "/images/post-images/1591512668067.jpg"
+cover: "/images/optimized/post-images/1591512668067.webp"
 draft: false
 ---
 

@@ -2,7 +2,7 @@
 title: Miu_you の 单调队列
 pubDate: 2020-03-25
 category: "做题记录"
-cover: "/images/post-images/1583391593712.jpg"
+cover: "/images/optimized/post-images/1583391593712.webp"
 draft: false
 ---
 

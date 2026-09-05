@@ -6,7 +6,7 @@ tags:
   - 数学
   - 质数
   - 解题报告
-cover: "/images/post-images/1591517369461.jpg"
+cover: "/images/optimized/post-images/1591517369461.webp"
 draft: false
 ---
 

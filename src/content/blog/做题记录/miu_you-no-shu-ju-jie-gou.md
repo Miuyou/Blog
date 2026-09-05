@@ -2,7 +2,7 @@
 title: Miu_you の 数据结构
 pubDate: 2020-03-30
 category: "做题记录"
-cover: "/images/post-images/1583577043309.jpg"
+cover: "/images/optimized/post-images/1583577043309.webp"
 draft: false
 ---
 

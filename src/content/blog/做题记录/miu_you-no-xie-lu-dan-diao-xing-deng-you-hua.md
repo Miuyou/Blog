@@ -2,7 +2,7 @@
 title: Miu_you の 斜率/单调性等优化
 pubDate: 2020-04-03
 category: "做题记录"
-cover: "/images/post-images/1583715537254.jpg"
+cover: "/images/optimized/post-images/1583715537254.webp"
 draft: false
 ---
 

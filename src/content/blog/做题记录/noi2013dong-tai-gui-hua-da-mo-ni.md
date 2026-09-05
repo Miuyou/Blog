@@ -6,7 +6,7 @@ tags:
   - 模拟
   - 动态规划
   - 解题报告
-cover: "/images/post-images/1591513011155.jpg"
+cover: "/images/optimized/post-images/1591513011155.webp"
 draft: false
 ---
 

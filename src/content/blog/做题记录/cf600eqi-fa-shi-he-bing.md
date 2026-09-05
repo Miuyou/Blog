@@ -5,7 +5,7 @@ category: "做题记录"
 tags:
   - 启发式合并
   - 数据结构
-cover: "/images/hero/VRChat_2026-01-13_01-01-05.123_2560x1440.png"
+cover: "/images/optimized/hero/VRChat_2026-01-13_01-01-05.123_2560x1440.webp"
 draft: false
 ---
 

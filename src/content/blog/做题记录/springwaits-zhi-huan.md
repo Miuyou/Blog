@@ -5,7 +5,7 @@ category: "做题记录"
 tags:
   - 置换
   - 算法学习
-cover: "/images/post-images/1601984806376.jpg"
+cover: "/images/optimized/post-images/1601984806376.webp"
 draft: false
 ---
 

@@ -31,9 +31,10 @@ When the author says “发布这篇”:
 4. Generate a stable URL-safe slug. Never change a published slug without adding a redirect.
 5. Put article files in `src/content/blog/<category>/` and images in `public/images/`.
 6. Use root-relative image paths such as `/images/example.webp`.
-7. Check internal links, external assets, metadata, mobile layout, and image dimensions.
-8. Run `npm run check` and `npm run build`; fix every blocking error.
-9. Commit and push the finished change. Production deployment occurs when `main` is pushed after the migration has been approved.
+7. Run `npm run optimize:images` when adding a new cover that is not already WebP.
+8. Check internal links, external assets, metadata, mobile layout, and image dimensions.
+9. Run `npm run check` and `npm run build`; fix every blocking error.
+10. Commit and push the finished change. Production deployment occurs when `main` is pushed after the migration has been approved.
 
 ## Engineering rules
 

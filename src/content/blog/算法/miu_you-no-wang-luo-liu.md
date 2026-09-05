@@ -4,7 +4,7 @@ pubDate: 2020-03-04
 category: "算法"
 tags:
   - 算法学习
-cover: "/images/post-images/jxoi-2020-you-ji.jpg"
+cover: "/images/optimized/post-images/jxoi-2020-you-ji.webp"
 draft: false
 ---
 

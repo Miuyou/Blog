@@ -6,7 +6,7 @@ tags:
   - BFS
   - 字符串
   - 解题报告
-cover: "/images/hero/home-bg.png"
+cover: "/images/optimized/hero/home-bg.webp"
 draft: false
 ---
 

@@ -4,7 +4,7 @@ pubDate: 2020-03-23
 category: "做题记录"
 tags:
   - 做题计划
-cover: "/images/post-images/WallpaperEngineLockOverride_randomIVUSTT.jpg"
+cover: "/images/optimized/post-images/WallpaperEngineLockOverride_randomIVUSTT.webp"
 draft: false
 ---
 

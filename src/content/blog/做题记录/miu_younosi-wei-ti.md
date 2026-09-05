@@ -2,7 +2,7 @@
 title: Miu_youの思维题
 pubDate: 2020-03-09
 category: "做题记录"
-cover: "/images/post-images/1584947480820.jpg"
+cover: "/images/optimized/post-images/1584947480820.webp"
 draft: false
 ---
 
