@@ -15,6 +15,7 @@ const years = [...groupByYear(posts).entries()].sort(([a], [b]) => Number(b) - N
       <p>{posts.length} 篇文章，沿时间慢慢展开。</p>
     </header>
     <div class="archive-list">
+      {posts.length === 0 && <p>暂时没有公开文章可供归档。</p>}
       {years.map(([year, yearPosts]) => (
         <section>
           <h2>{year}</h2>

@@ -6,7 +6,7 @@ tags:
   - 启发式合并
   - 数据结构
 cover: "/images/optimized/hero/VRChat_2026-01-13_01-01-05.123_2560x1440.webp"
-draft: false
+draft: true
 ---
 
 * [CF600E Lomsat gelral](https://www.luogu.com.cn/problem/CF600E)

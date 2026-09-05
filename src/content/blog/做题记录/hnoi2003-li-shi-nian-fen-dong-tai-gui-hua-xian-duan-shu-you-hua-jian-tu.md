@@ -8,7 +8,7 @@ tags:
   - 动态规划
   - 解题报告
 cover: "/images/optimized/hero/VRChat_2026-02-19_16-31-27.571_3840x2160.webp"
-draft: false
+draft: true
 ---
 
 * [P2282 [HNOI2003]历史年份](https://www.luogu.com.cn/problem/P2282)

@@ -5,7 +5,7 @@ category: "做题记录"
 tags:
   - 做题计划
 cover: "/images/optimized/post-images/1598023464067.webp"
-draft: false
+draft: true
 ---
 
 因为窝太弱了,所以决定把省选题都刷了!

@@ -7,7 +7,7 @@ tags:
   - 背包
   - 解题报告
 cover: "/images/optimized/hero/VRChat_2026-02-19_16-28-52.717_3840x2160.webp"
-draft: false
+draft: true
 ---
 
 * [P1285 队员分组](https://www.luogu.com.cn/problem/P1285)

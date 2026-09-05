@@ -7,7 +7,7 @@ tags:
   - 字符串
   - 解题报告
 cover: "/images/optimized/hero/home-bg.webp"
-draft: false
+draft: true
 ---
 
 * [P2322 [HNOI2006]最短母串问题](https://www.luogu.com.cn/problem/P2322)

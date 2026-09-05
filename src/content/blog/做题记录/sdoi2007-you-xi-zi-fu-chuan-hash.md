@@ -8,7 +8,7 @@ tags:
   - 动态规划
   - 解题报告
 cover: "/images/optimized/post-images/1592042663704.webp"
-draft: false
+draft: true
 ---
 
 * [P2462 [SDOI2007]游戏](https://www.luogu.com.cn/problem/P2462)

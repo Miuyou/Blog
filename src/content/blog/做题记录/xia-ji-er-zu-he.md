@@ -3,7 +3,7 @@ title: 瞎吉尔组合
 pubDate: 2020-08-24
 category: "做题记录"
 cover: "/images/optimized/post-images/1602154862437.webp"
-draft: false
+draft: true
 ---
 
 * [P3330 [ZJOI2011]看电影](https://www.luogu.com.cn/problem/P3330)

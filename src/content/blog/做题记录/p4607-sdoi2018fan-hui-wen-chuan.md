@@ -7,7 +7,7 @@ tags:
   - 质数
   - 解题报告
 cover: "/images/optimized/post-images/1591517369461.webp"
-draft: false
+draft: true
 ---
 
 好nb啊,,首先摸一摸不可以的情况,然后列个狮子出来,大概就是枚举循环节长度去计算,大力反演,反演出来的结果加以计算就行了

@@ -16,6 +16,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comp
     </header>
     <section class="post-list" aria-label="文章列表">
       {posts.map((post) => <PostCard post={post} />)}
+      {posts.length === 0 && <p>暂时没有公开文章，欢迎以后再来。</p>}
     </section>
   </div>
 </BaseLayout>

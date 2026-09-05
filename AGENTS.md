@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This repository is the source of truth for Spring Blog. The migration branch builds a static Astro site prepared for Tencent EdgeOne Pages. Production remains Hugo until the author approves the switch.
+This repository is the source of truth for Spring Blog. The author approved merging the Astro migration on 2026-09-05. EdgeOne production connection and domain setup remain separate from merging code; do not claim deployment has happened without verification.
 
 ## Responsibilities
 
@@ -43,7 +43,8 @@ When the author says “发布这篇”:
 - Keep code educational, direct, and easy to read. Avoid compatibility layers, dead paths, unnecessary abstractions, and speculative error handling.
 - Keep old URLs working. Current historical article URLs use `/posts/<category>/<slug>/`.
 - Do not modify DNS, VPS configuration, or production deployment settings without explicit approval.
-- Do not merge the `astro-migration` branch into `main` until the author approves the production switch.
+- The author approved merging `astro-migration` into `main` on 2026-09-05, with all 48 migrated articles temporarily hidden as drafts. Do not republish them without an explicit request. Their source files and images must remain preserved.
+- Keep the root `写作手册.md` accurate when changing article metadata or publishing behavior.
 
 ## Required checks
 

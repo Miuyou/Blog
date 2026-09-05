@@ -7,7 +7,7 @@ tags:
   - 动态规划
   - 解题报告
 cover: "/images/optimized/post-images/1601984663941.webp"
-draft: false
+draft: true
 ---
 
 * [P2159 [SHOI2009]舞会](https://www.luogu.com.cn/problem/P2159)

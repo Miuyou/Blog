@@ -18,6 +18,7 @@ const counts = [...posts.reduce((map, post) => {
       <p>从主题线索进入文章。</p>
     </header>
     <div class="term-grid">
+      {counts.length === 0 && <p>公开文章发布后，标签会显示在这里。</p>}
       {counts.map(([tag, count]) => (
         <a href={tagPath(tag)}><span>#{tag}</span><small>{count} 篇</small></a>
       ))}

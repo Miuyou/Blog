@@ -18,6 +18,7 @@ const counts = [...posts.reduce((map, post) => {
       <p>写作所处的几条长期路径。</p>
     </header>
     <div class="term-grid term-grid-large">
+      {counts.length === 0 && <p>公开文章发布后，分类会显示在这里。</p>}
       {counts.map(([category, count]) => (
         <a href={`/categories/${category}/`}><span>{category}</span><small>{count} 篇</small></a>
       ))}
