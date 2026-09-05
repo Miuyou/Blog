@@ -108,7 +108,7 @@ input {
   border: 0;
   background:
     linear-gradient(180deg, rgb(20 14 17 / 24%), rgb(20 14 17 / 68%)),
-    url("/images/optimized/hero/home-bg.webp") center 48% / cover no-repeat;
+    url("/images/optimized/hero/home-bg.webp") 57% 58% / cover no-repeat;
   color: white;
 }
 
@@ -193,17 +193,8 @@ input {
   text-shadow: 0 2px 26px rgb(0 0 0 / 35%);
 }
 
-.hero-content h1 {
-  max-width: 760px;
-  margin: 0;
-  font-size: clamp(3rem, 8vw, 6.5rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1;
-}
-
 .hero-content > p:last-child {
-  margin: 1.3rem 0 0;
+  margin: 0.65rem 0 0;
   font-size: clamp(1.05rem, 2.2vw, 1.35rem);
 }
 
