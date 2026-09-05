@@ -1,4 +1,4 @@
-import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, access, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const root = process.cwd();
@@ -83,8 +83,11 @@ function migratedPage(source) {
   return `${nextFrontmatter}\n\n${body.replace(/^\s+/, '')}`;
 }
 
-await rm(targetPosts, { recursive: true, force: true });
-await rm(targetPages, { recursive: true, force: true });
+for (const directory of [targetPosts, targetPages]) {
+  if (await access(directory).then(() => true, () => false)) {
+    throw new Error(`One-time migration refuses to overwrite existing content: ${directory}`);
+  }
+}
 await mkdir(targetPosts, { recursive: true });
 await mkdir(targetPages, { recursive: true });
 

@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { absoluteUrl } from '../lib/urls';
-import { postPath } from '../lib/posts';
+import { postPath, tagPath } from '../lib/posts';
 
 function escapeXml(value: string) {
   return value.replace(/[<>&'"]/g, (char) => ({
@@ -24,7 +24,7 @@ export const GET: APIRoute = async ({ site }) => {
     ...['/', '/posts/', '/archives/', '/tags/', '/categories/'],
     ...pages.map((page) => `/${page.id}/`),
     ...posts.map(postPath),
-    ...tags.map((tag) => `/tags/${tag}/`),
+    ...tags.map(tagPath),
     ...categories.map((category) => `/categories/${category}/`),
   ];
 

@@ -2,6 +2,10 @@ import type { CollectionEntry } from 'astro:content';
 
 export type BlogPost = CollectionEntry<'blog'>;
 
+export function tagPath(tag: string) {
+  return `/tags/${tag.toLowerCase()}/`;
+}
+
 export function postSlug(post: BlogPost) {
   return post.data.slug ?? post.id;
 }
@@ -19,6 +23,7 @@ export function formatDate(date: Date) {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'Asia/Shanghai',
   }).format(date);
 }
 
@@ -36,5 +41,5 @@ export function postDescription(post: BlogPost) {
 }
 
 export function groupByYear(posts: BlogPost[]) {
-  return Map.groupBy(posts, (post) => String(post.data.pubDate.getFullYear()));
+  return Map.groupBy(posts, (post) => new Intl.DateTimeFormat('en', { year: 'numeric', timeZone: 'Asia/Shanghai' }).format(post.data.pubDate));
 }

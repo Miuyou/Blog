@@ -4,7 +4,6 @@ import path from 'node:path';
 const root = process.cwd();
 const contentRoot = path.join(root, 'src', 'content', 'blog');
 const publicRoot = path.join(root, 'public');
-const expectedPublishedPosts = 48;
 
 async function markdownFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -24,7 +23,7 @@ function frontmatter(source) {
 }
 
 function localReferences(source) {
-  return [...source.matchAll(/!?\[[^\]]*\]\((\/[^)\s]+)[^)]*\)/g)]
+  return [...source.matchAll(/!\[[^\]]*\]\((\/[^)\s]+)[^)]*\)/g)]
     .map((match) => decodeURI(match[1]));
 }
 
@@ -46,17 +45,13 @@ for (const file of files) {
   if (!/^draft:\s*true/m.test(data)) published.push(file);
 
   for (const reference of localReferences(source)) {
-    const asset = path.join(publicRoot, reference.replace(/^\//, ''));
+    const asset = path.join(publicRoot, reference.split(/[?#]/)[0].replace(/^\//, ''));
     try {
       await access(asset);
     } catch {
       failures.push(`${relative}: missing asset ${reference}`);
     }
   }
-}
-
-if (published.length !== expectedPublishedPosts) {
-  failures.push(`expected ${expectedPublishedPosts} published posts, found ${published.length}`);
 }
 
 if (failures.length) {

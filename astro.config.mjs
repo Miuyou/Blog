@@ -12,7 +12,10 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeKatex],
+      rehypePlugins: [[rehypeKatex, {
+        // Historical notes intentionally contain Chinese labels inside formulas.
+        strict: (code) => code === 'unicodeTextInMathMode' ? 'ignore' : 'warn',
+      }]],
       shikiConfig: {
         theme: 'github-dark',
         wrap: true,

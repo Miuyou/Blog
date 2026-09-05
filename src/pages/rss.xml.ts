@@ -1,6 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { SITE } from '../config';
+import { absoluteUrl } from '../lib/urls';
 import { comparePosts, postDescription, postPath } from '../lib/posts';
 
 export async function GET(context: { site?: URL }) {
@@ -14,7 +15,7 @@ export async function GET(context: { site?: URL }) {
       title: post.data.title,
       description: postDescription(post),
       pubDate: post.data.pubDate,
-      link: postPath(post),
+      link: absoluteUrl(postPath(post), context.site ?? new URL('https://miuyou.github.io/Blog/')).href,
       categories: [post.data.category, ...post.data.tags],
     })),
     customData: '<language>zh-CN</language>',

@@ -29,6 +29,11 @@ async function exists(file) {
 }
 
 const outputFiles = await filesIn(dist);
+const legacyUrls = JSON.parse(await readFile(path.join(root, 'docs/legacy-urls.json'), 'utf8'));
+for (const url of legacyUrls) {
+  const route = decodeURI(new URL(url).pathname).replace(/^\/Blog\//, '/');
+  if (!await exists(path.join(dist, route, 'index.html'))) failures.push(`missing legacy URL: ${url}`);
+}
 const htmlFiles = outputFiles.filter((file) => file.endsWith('.html'));
 const articleFiles = htmlFiles.filter((file) => {
   const relative = path.relative(dist, file).split(path.sep).join('/');
@@ -85,6 +90,20 @@ for (const file of legacyFiles) {
   if (!await exists(output)) failures.push(`missing legacy route for ${relative}`);
 }
 
+// Keep historical taxonomy paths compatible with Hugo's lowercased URL slugs.
+const legacyTags = new Set();
+for (const file of legacyFiles) {
+  const source = await readFile(file, 'utf8');
+  const tags = source.match(/^tags:\s*\n((?:[ \t]+-.*\n)*)/m)?.[1] ?? '';
+  for (const line of tags.split('\n')) {
+    const tag = line.match(/^\s*-\s*(.+?)\s*$/)?.[1]?.replace(/^["']|["']$/g, '');
+    if (tag) legacyTags.add(tag.toLowerCase());
+  }
+}
+for (const tag of legacyTags) {
+  if (!await exists(path.join(dist, 'tags', tag, 'index.html'))) failures.push(`missing legacy tag: ${tag}`);
+}
+
 for (const required of [
   'index.html',
   '404.html',
@@ -99,13 +118,24 @@ for (const required of [
   if (!await exists(path.join(dist, required))) failures.push(`missing output ${required}`);
 }
 
-if (articleFiles.length !== 48) {
-  failures.push(`expected 48 generated article pages, found ${articleFiles.length}`);
+if (articleFiles.length < legacyFiles.length) {
+  failures.push(`expected at least ${legacyFiles.length} historical article pages, found ${articleFiles.length}`);
 }
+
+const sourceFiles = (await filesIn(path.join(root, 'src/content/blog'))).filter((file) => /\.mdx?$/.test(file));
+let publishedCount = 0;
+for (const file of sourceFiles) {
+  const source = await readFile(file, 'utf8');
+  const metadata = source.match(/^---\s*\n([\s\S]*?)\n---/)?.[1] ?? '';
+  if (!/^draft:\s*true\s*$/m.test(metadata)) publishedCount += 1;
+}
+if (articleFiles.length !== publishedCount) failures.push(`expected ${publishedCount} published article pages, found ${articleFiles.length}`);
 
 let katexFound = false;
 for (const file of articleFiles) {
-  if ((await readFile(file, 'utf8')).includes('class="katex"')) katexFound = true;
+  const html = await readFile(file, 'utf8');
+  if (html.includes('class="katex"')) katexFound = true;
+  if (html.includes('class="katex-error"')) failures.push(`${path.relative(dist, file)}: invalid math`);
 }
 if (!katexFound) failures.push('no server-rendered KaTeX output found');
 

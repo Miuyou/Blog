@@ -2,10 +2,12 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import TableOfContents from '../../components/TableOfContents.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { comparePosts, formatDate, postDescription, postPath, postSlug } from '../../lib/posts';
+import { comparePosts, formatDate, postDescription, postPath, postSlug, tagPath } from '../../lib/posts';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comparePosts);
+  const paths = posts.map(postPath);
+  if (new Set(paths).size !== paths.length) throw new Error('Published articles must have unique slugs');
 
   return posts.map((post, index) => ({
     params: { slug: postSlug(post) },
@@ -52,7 +54,7 @@ const description = postDescription(post);
       </div>
       {post.data.tags.length > 0 && (
         <ul class="tag-list" aria-label="标签">
-          {post.data.tags.map((tag) => <li><a href={`/tags/${tag}/`}>#{tag}</a></li>)}
+          {post.data.tags.map((tag) => <li><a href={tagPath(tag)}>#{tag}</a></li>)}
         </ul>
       )}
     </header>

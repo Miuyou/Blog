@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { tagPath } from '../../lib/posts';
 
 const posts = await getCollection('blog', ({ data }) => !data.draft);
 const counts = [...posts.reduce((map, post) => {
@@ -18,7 +19,7 @@ const counts = [...posts.reduce((map, post) => {
     </header>
     <div class="term-grid">
       {counts.map(([tag, count]) => (
-        <a href={`/tags/${tag}/`}><span>#{tag}</span><small>{count} 篇</small></a>
+        <a href={tagPath(tag)}><span>#{tag}</span><small>{count} 篇</small></a>
       ))}
     </div>
   </div>

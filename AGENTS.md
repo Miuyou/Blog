@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This repository is the source of truth for Spring Blog. The production site is a static Astro site deployed from GitHub to Tencent EdgeOne Pages.
+This repository is the source of truth for Spring Blog. The migration branch builds a static Astro site prepared for Tencent EdgeOne Pages. Production remains Hugo until the author approves the switch.
 
 ## Responsibilities
 
