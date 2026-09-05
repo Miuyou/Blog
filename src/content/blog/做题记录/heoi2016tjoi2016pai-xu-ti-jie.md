@@ -5,7 +5,7 @@ category: "做题记录"
 tags:
   - 解题报告
 cover: "/images/optimized/hero/VRChat_2026-02-19_16-29-46.777_3840x2160.webp"
-draft: true
+draft: false
 ---
 
 题目要求我们求出第$q$位置上的数字.

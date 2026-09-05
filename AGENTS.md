@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This repository is the source of truth for Spring Blog. The author approved merging the Astro migration on 2026-09-05. EdgeOne production connection and domain setup remain separate from merging code; do not claim deployment has happened without verification.
+This repository is the source of truth for SpringWait Blog. The author approved merging the Astro migration on 2026-09-05. EdgeOne production connection and domain setup remain separate from merging code; do not claim deployment has happened without verification.
 
 ## Responsibilities
 

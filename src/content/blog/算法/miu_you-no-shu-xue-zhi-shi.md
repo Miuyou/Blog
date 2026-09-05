@@ -3,7 +3,7 @@ title: Miu_you の 数学知识
 pubDate: 2020-11-04
 category: "算法"
 cover: "/images/optimized/post-images/heoi2016tjoi2016pai-xu-ti-jie.webp"
-draft: true
+draft: false
 ---
 
 重新整活

@@ -6,7 +6,7 @@ tags:
   - 置换
   - 算法学习
 cover: "/images/optimized/post-images/1601984806376.webp"
-draft: true
+draft: false
 ---
 
 $Burnside$ 引理： 对于一个置换 $f$，若一个着色方案$s$ 经过置换后不变，则称 $s$ 为 $f$ 的不动点。记 $f$ 的不动点数目为 $D(f)$，则等价类个数为所有 $D(f)$ 的平均值。

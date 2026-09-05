@@ -7,7 +7,7 @@ tags:
   - 数据结构
   - 解题报告
 cover: "/images/optimized/hero/VRChat_2026-01-31_19-39-34.323_2560x1440.webp"
-draft: true
+draft: false
 ---
 
 * [CF786B Legacy](https://www.luogu.com.cn/problem/CF786B)

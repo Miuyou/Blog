@@ -25,7 +25,6 @@ const categoryCounts = Object.entries(
         <a href="/posts/">查看全部 {posts.length} 篇</a>
       </div>
       {posts.slice(0, 12).map((post) => <PostCard post={post} />)}
-      {posts.length === 0 && <p>暂时没有公开文章，新的记录正在准备中。</p>}
     </section>
 
     <aside class="author-panel" aria-label="作者信息">

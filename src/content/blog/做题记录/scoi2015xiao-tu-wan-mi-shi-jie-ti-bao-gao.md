@@ -3,7 +3,7 @@ title: "[SCOI2015]小凸玩密室 解题报告"
 pubDate: 2020-03-20
 category: "做题记录"
 cover: "/images/optimized/post-images/1591605623747.webp"
-draft: true
+draft: false
 ---
 
 神仙dp orzorz

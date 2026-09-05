@@ -3,7 +3,7 @@ title: Miu_you の最小斯坦纳树
 pubDate: 2020-03-26
 category: "算法"
 cover: "/images/optimized/post-images/miu_you-no-qu-jian-dp.webp"
-draft: true
+draft: false
 ---
 
 给定一个包含 $n$ 个结点和 $m$ 条带权边的无向连通图 $G=(V,E)$。

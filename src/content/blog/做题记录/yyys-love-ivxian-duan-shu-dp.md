@@ -7,7 +7,7 @@ tags:
   - 动态规划
   - 解题报告
 cover: "/images/optimized/post-images/cts2019ke-jin-shou-you.webp"
-draft: true
+draft: false
 ---
 
 * [P2418 yyy loves OI IV](https://www.luogu.com.cn/problem/P2418)

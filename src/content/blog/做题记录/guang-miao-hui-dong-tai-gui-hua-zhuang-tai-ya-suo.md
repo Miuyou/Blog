@@ -7,7 +7,7 @@ tags:
   - 动态规划
   - 解题报告
 cover: "/images/optimized/hero/VRChat_2026-02-19_16-29-01.762_3840x2160.webp"
-draft: true
+draft: false
 ---
 
 * [P2238 逛庙会](https://www.luogu.com.cn/problem/P2238)

@@ -2,12 +2,13 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { comparePosts, formatDate, groupByYear, postPath } from '../../lib/posts';
+import { SITE } from '../../config';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comparePosts);
 const years = [...groupByYear(posts).entries()].sort(([a], [b]) => Number(b) - Number(a));
 ---
 
-<BaseLayout title="归档" description="按年份浏览 Spring Blog 的全部历史文章。">
+<BaseLayout title="归档" description={`按年份浏览 ${SITE.title} 的全部历史文章。`}>
   <div class="shell narrow page-section">
     <header class="page-heading">
       <p class="eyebrow">ARCHIVE</p>

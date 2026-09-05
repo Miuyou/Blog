@@ -3,7 +3,7 @@ title: Miu_you の 斜率/单调性等优化
 pubDate: 2020-04-03
 category: "做题记录"
 cover: "/images/optimized/post-images/1583715537254.webp"
-draft: true
+draft: false
 ---
 
 * [P2120 [ZJOI2007]仓库建设](https://www.luogu.com.cn/problem/P2120)

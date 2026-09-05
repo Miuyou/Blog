@@ -8,7 +8,7 @@ tags:
   - 动态规划
   - 解题报告
 cover: "/images/optimized/post-images/1592116460898.webp"
-draft: true
+draft: false
 ---
 
 * [P2487 [SDOI2011]拦截导弹](https://www.luogu.com.cn/problem/P2487)

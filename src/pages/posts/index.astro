@@ -3,11 +3,12 @@ import { getCollection } from 'astro:content';
 import PostCard from '../../components/PostCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { comparePosts } from '../../lib/posts';
+import { SITE } from '../../config';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comparePosts);
 ---
 
-<BaseLayout title="全部文章" description={`Spring Blog 的全部 ${posts.length} 篇文章。`}>
+<BaseLayout title="全部文章" description={`${SITE.title} 的全部 ${posts.length} 篇文章。`}>
   <div class="shell narrow page-section">
     <header class="page-heading">
       <p class="eyebrow">ALL POSTS</p>

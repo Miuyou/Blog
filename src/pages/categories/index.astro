@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
 
 const posts = await getCollection('blog', ({ data }) => !data.draft);
 const counts = [...posts.reduce((map, post) => {
@@ -10,7 +11,7 @@ const counts = [...posts.reduce((map, post) => {
 }, new Map<string, number>()).entries()].sort(([a], [b]) => a.localeCompare(b, 'zh-CN'));
 ---
 
-<BaseLayout title="分类" description="按分类浏览 Spring Blog 的文章。">
+<BaseLayout title="分类" description={`按分类浏览 ${SITE.title} 的文章。`}>
   <div class="shell narrow page-section">
     <header class="page-heading">
       <p class="eyebrow">CATEGORIES</p>

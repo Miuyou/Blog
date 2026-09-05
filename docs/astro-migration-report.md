@@ -1,8 +1,6 @@
 # Astro migration report
 
-Status: migration acceptance snapshot; author approved merge on 2026-09-05 with all historical articles temporarily hidden. The original 48-published-post results below describe migration acceptance before hiding.
-
-Current visibility: all 48 historical articles are drafts; the build emits 0 article pages and excludes them from feeds and taxonomy listings. Sources and images remain intact. Root author guide: `写作手册.md`.
+Status: ready for review, not merged into `main`  
 Branch: `astro-migration`  
 Date: 2026-09-05
 

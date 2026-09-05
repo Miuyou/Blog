@@ -8,7 +8,7 @@ tags:
   - 动态规划
   - 解题报告
 cover: "/images/optimized/post-images/1583297071335.webp"
-draft: true
+draft: false
 ---
 
 * [P1357 花园](https://www.luogu.com.cn/problem/P1357)
