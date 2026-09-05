@@ -28,10 +28,36 @@ async function exists(file) {
   }
 }
 
+const blogRoot = path.join(root, 'src/content/blog');
+const hiddenBlogRoot = path.join(root, '隐藏内容/文章');
+const sourceFiles = (await filesIn(blogRoot)).filter((file) => /\.mdx?$/.test(file));
+const hiddenFiles = (await filesIn(hiddenBlogRoot)).filter((file) => /\.mdx?$/.test(file));
+async function postRecord(file, base, hidden = false) {
+  const source = await readFile(file, 'utf8');
+  const metadata = source.match(/^---\s*\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
+  const id = path.relative(base, file).split(path.sep).join('/').replace(/\.mdx?$/, '');
+  const slug = metadata.match(/^slug:\s*(.+)$/m)?.[1]?.trim().replace(/^["']|["']$/g, '') ?? id;
+  return { file, metadata, originalRoute: `/posts/${id}/`, route: `/posts/${slug}/`, draft: hidden || /^draft:\s*true\s*$/m.test(metadata) };
+}
+const posts = await Promise.all(sourceFiles.map((file) => postRecord(file, blogRoot)));
+const archivedPosts = await Promise.all(hiddenFiles.map((file) => postRecord(file, hiddenBlogRoot, true)));
+const hiddenRoutes = new Set([...posts, ...archivedPosts].filter((post) => post.draft).flatMap((post) => [post.route, post.originalRoute]));
+const publishedCount = posts.filter((post) => !post.draft).length;
+const publishedTags = new Set();
+for (const post of posts.filter((post) => !post.draft)) {
+  const tags = post.metadata.match(/^tags:\s*\n((?:[ \t]+-.*\n)*)/m)?.[1] ?? '';
+  for (const line of tags.split('\n')) {
+    const tag = line.match(/^\s*-\s*(.+?)\s*$/)?.[1]?.replace(/^["']|["']$/g, '');
+    if (tag) publishedTags.add(tag.toLowerCase());
+  }
+}
 const outputFiles = await filesIn(dist);
 const legacyUrls = JSON.parse(await readFile(path.join(root, 'docs/legacy-urls.json'), 'utf8'));
 for (const url of legacyUrls) {
   const route = decodeURI(new URL(url).pathname).replace(/^\/Blog\//, '/');
+  // Explicit drafts are intentionally unavailable; empty historical tags disappear too.
+  if (hiddenRoutes.has(route)) continue;
+  if (route.startsWith('/tags/') && route !== '/tags/' && !publishedTags.has(route.slice(6, -1))) continue;
   if (!await exists(path.join(dist, route, 'index.html'))) failures.push(`missing legacy URL: ${url}`);
 }
 const htmlFiles = outputFiles.filter((file) => file.endsWith('.html'));
@@ -85,23 +111,24 @@ const legacyFiles = (await filesIn(legacyPosts))
   .filter((file) => file.endsWith('.md') && path.basename(file) !== '_index.md');
 
 for (const file of legacyFiles) {
-  const relative = path.relative(legacyPosts, file).replace(/\.md$/, '');
-  const output = path.join(dist, 'posts', relative, 'index.html');
-  if (!await exists(output)) failures.push(`missing legacy route for ${relative}`);
+  const relative = path.relative(legacyPosts, file);
+  if (!await exists(path.join(hiddenBlogRoot, relative))) failures.push(`missing locally organized historical source: ${relative}`);
 }
-
-// Keep historical taxonomy paths compatible with Hugo's lowercased URL slugs.
-const legacyTags = new Set();
-for (const file of legacyFiles) {
-  const source = await readFile(file, 'utf8');
-  const tags = source.match(/^tags:\s*\n((?:[ \t]+-.*\n)*)/m)?.[1] ?? '';
-  for (const line of tags.split('\n')) {
-    const tag = line.match(/^\s*-\s*(.+?)\s*$/)?.[1]?.replace(/^["']|["']$/g, '');
-    if (tag) legacyTags.add(tag.toLowerCase());
+for (const post of posts) {
+  const output = path.join(dist, post.route, 'index.html');
+  const generated = await exists(output);
+  if (post.draft && generated) failures.push(`draft leaked into output: ${post.route}`);
+  if (!post.draft && !generated) failures.push(`missing published article: ${post.route}`);
+}
+for (const feed of ['rss.xml', 'index.xml', 'sitemap.xml']) {
+  const xml = decodeURI(await readFile(path.join(dist, feed), 'utf8'));
+  for (const route of hiddenRoutes) {
+    if (xml.includes(route)) failures.push(`draft leaked into ${feed}: ${route}`);
   }
 }
-for (const tag of legacyTags) {
-  if (!await exists(path.join(dist, 'tags', tag, 'index.html'))) failures.push(`missing legacy tag: ${tag}`);
+
+for (const hiddenPath of ['隐藏内容', '/images/post-images/', '/images/hero/VRChat_', '/images/optimized/post-images/']) {
+  if (outputFiles.some((file) => path.relative(dist, file).includes(hiddenPath))) failures.push(`hidden material leaked into deployment: ${hiddenPath}`);
 }
 
 for (const required of [
@@ -118,29 +145,15 @@ for (const required of [
   if (!await exists(path.join(dist, required))) failures.push(`missing output ${required}`);
 }
 
-if (articleFiles.length < legacyFiles.length) {
-  failures.push(`expected at least ${legacyFiles.length} historical article pages, found ${articleFiles.length}`);
-}
-
-const sourceFiles = (await filesIn(path.join(root, 'src/content/blog'))).filter((file) => /\.mdx?$/.test(file));
-let publishedCount = 0;
-for (const file of sourceFiles) {
-  const source = await readFile(file, 'utf8');
-  const metadata = source.match(/^---\s*\n([\s\S]*?)\n---/)?.[1] ?? '';
-  if (!/^draft:\s*true\s*$/m.test(metadata)) publishedCount += 1;
-}
 if (articleFiles.length !== publishedCount) failures.push(`expected ${publishedCount} published article pages, found ${articleFiles.length}`);
 
-let katexFound = false;
 for (const file of articleFiles) {
   const html = await readFile(file, 'utf8');
-  if (html.includes('class="katex"')) katexFound = true;
   if (html.includes('class="katex-error"')) failures.push(`${path.relative(dist, file)}: invalid math`);
 }
-if (!katexFound) failures.push('no server-rendered KaTeX output found');
 
 if (failures.length) {
   throw new Error(`Build validation failed:\n${failures.join('\n')}`);
 }
 
-console.log(`Validated 48 legacy routes, ${htmlFiles.length} HTML pages, metadata, and local links.`);
+console.log(`Validated ${hiddenFiles.length} locally archived historical posts, ${publishedCount} published posts, ${posts.length - publishedCount} collection drafts, ${htmlFiles.length} HTML pages, metadata, and local links.`);

@@ -43,7 +43,7 @@ When the author says “发布这篇”:
 - Keep code educational, direct, and easy to read. Avoid compatibility layers, dead paths, unnecessary abstractions, and speculative error handling.
 - Keep old URLs working. Current historical article URLs use `/posts/<category>/<slug>/`.
 - Do not modify DNS, VPS configuration, or production deployment settings without explicit approval.
-- The author approved merging `astro-migration` into `main` on 2026-09-05, with all 48 migrated articles temporarily hidden as drafts. Do not republish them without an explicit request. Their source files and images must remain preserved.
+- The author approved merging `astro-migration` into `main` on 2026-09-05. All 48 migrated articles and their assets are now kept under root `隐藏内容/`, outside Astro collections and `public`, so they do not enter deployment output. Do not republish them without an explicit request; restore both Markdown and referenced images together.
 - Keep the root `写作手册.md` accurate when changing article metadata or publishing behavior.
 
 ## Required checks
