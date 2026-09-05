@@ -49,11 +49,13 @@ Local checks completed with Node.js 24.18.0 and EdgeOne-supported 24.5.0 (pinned
 - Content validation: **48 published posts** and all referenced local assets found.
 - `npm run build`: success.
 - Output validation: **48 legacy routes**, **80 HTML pages**, SEO metadata, server-rendered KaTeX, and all generated local links passed.
-- Browser review: desktop home, mobile home, desktop article, mobile article, and dark mode checked.
+- Browser review: Chromium at actual **390px** and **1440px** viewports; home, article list, archives, tag index, BFS tag, categories, two historical articles and 404 all checked. No document overflow, missing alt attributes, invalid math, or page JavaScript errors. Theme toggle persists after reload; skip link is the first keyboard target; unknown routes return HTTP 404 in Astro preview.
 - Exact sitemap comparison: all 48 old article URLs exist in the Astro sitemap.
 - Regression test: a temporary 49th published article builds and appears in RSS; a temporary draft does not appear in HTML or feeds. Both fixtures were removed afterward. Routine checks do not impose a fixed article-count ceiling.
 - The one-time migration script refuses to overwrite existing Astro content, protecting future posts.
-- GitHub Actions: pending remote validation; local results are not a substitute for CI.
+- GitHub Actions: **passed** for code commit `46aab3c` — [run #2](https://github.com/Miuyou/Blog/actions/runs/33947555542).
+- Review-only draft PR: [#1](https://github.com/Miuyou/Blog/pull/1). No merge or production deployment performed.
+- Custom-origin build with `SITE_URL=https://blog.example.test`: all 48 RSS items and sitemap URLs use the selected origin, without leaking the old GitHub Pages hostname. The example origin was used only for testing, not configured in production.
 
 ## EdgeOne Makers / Pages setup after approval
 
