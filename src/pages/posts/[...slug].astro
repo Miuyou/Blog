@@ -1,0 +1,92 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import TableOfContents from '../../components/TableOfContents.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { comparePosts, formatDate, postDescription, postPath, postSlug, tagPath } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comparePosts);
+  const paths = posts.map(postPath);
+  if (new Set(paths).size !== paths.length) throw new Error('Published articles must have unique slugs');
+
+  return posts.map((post, index) => ({
+    params: { slug: postSlug(post) },
+    props: {
+      post,
+      newer: posts[index - 1],
+      older: posts[index + 1],
+    },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  newer?: CollectionEntry<'blog'>;
+  older?: CollectionEntry<'blog'>;
+}
+
+const { post, newer, older } = Astro.props;
+const { Content, headings } = await render(post);
+const description = postDescription(post);
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={description}
+  image={post.data.cover}
+  type="article"
+  publishedTime={post.data.pubDate}
+  updatedTime={post.data.updatedDate}
+>
+  <article class="article-shell">
+    <header class="article-header shell">
+      <nav class="breadcrumbs" aria-label="面包屑">
+        <a href="/">首页</a><span aria-hidden="true">/</span>
+        <a href={`/categories/${post.data.category}/`}>{post.data.category}</a>
+      </nav>
+      <h1>{post.data.title}</h1>
+      <div class="article-meta">
+        <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+        {post.data.updatedDate && (
+          <span>更新于 <time datetime={post.data.updatedDate.toISOString()}>{formatDate(post.data.updatedDate)}</time></span>
+        )}
+        <span>{post.data.category}</span>
+      </div>
+      {post.data.tags.length > 0 && (
+        <ul class="tag-list" aria-label="标签">
+          {post.data.tags.map((tag) => <li><a href={tagPath(tag)}>#{tag}</a></li>)}
+        </ul>
+      )}
+    </header>
+
+    {post.data.cover && (
+      <figure class="article-cover shell">
+        <img src={post.data.cover} alt="" width="1280" height="720" fetchpriority="high" />
+      </figure>
+    )}
+
+    <div class="shell article-grid">
+      <div class="prose">
+        <Content />
+      </div>
+      <aside>
+        <TableOfContents headings={headings} />
+      </aside>
+    </div>
+
+    <nav class="shell post-navigation" aria-label="相邻文章">
+      {newer ? (
+        <a href={postPath(newer)}>
+          <small>上一篇</small>
+          <span>{newer.data.title}</span>
+        </a>
+      ) : <span />}
+      {older ? (
+        <a class="next" href={postPath(older)}>
+          <small>下一篇</small>
+          <span>{older.data.title}</span>
+        </a>
+      ) : <span />}
+    </nav>
+  </article>
+</BaseLayout>

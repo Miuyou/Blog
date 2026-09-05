@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { comparePosts, formatDate, groupByYear, postPath } from '../../lib/posts';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comparePosts);
+const years = [...groupByYear(posts).entries()].sort(([a], [b]) => Number(b) - Number(a));
+---
+
+<BaseLayout title="归档" description="按年份浏览 Spring Blog 的全部历史文章。">
+  <div class="shell narrow page-section">
+    <header class="page-heading">
+      <p class="eyebrow">ARCHIVE</p>
+      <h1>归档</h1>
+      <p>{posts.length} 篇文章，沿时间慢慢展开。</p>
+    </header>
+    <div class="archive-list">
+      {posts.length === 0 && <p>暂时没有公开文章可供归档。</p>}
+      {years.map(([year, yearPosts]) => (
+        <section>
+          <h2>{year}</h2>
+          <ol>
+            {yearPosts.map((post) => (
+              <li>
+                <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+                <a href={postPath(post)}>{post.data.title}</a>
+                <a class="archive-category" href={`/categories/${post.data.category}/`}>{post.data.category}</a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

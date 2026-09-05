@@ -1,0 +1,13 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci",
+  "outputDirectory": "dist",
+  "nodeVersion": "24.5.0",
+  "redirects": [
+    { "source": "/Blog/*", "destination": "/:splat", "statusCode": 301 },
+    { "source": "/page/:page", "destination": "/posts/", "statusCode": 301 },
+    { "source": "/posts/page/:page", "destination": "/posts/", "statusCode": 301 },
+    { "source": "/tags/:tag/page/:page", "destination": "/tags/:tag/", "statusCode": 301 },
+    { "source": "/archives/page/:page", "destination": "/archives/", "statusCode": 301 }
+  ]
+}

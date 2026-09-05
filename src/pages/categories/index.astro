@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+const counts = [...posts.reduce((map, post) => {
+  const category = post.data.category;
+  map.set(category, (map.get(category) ?? 0) + 1);
+  return map;
+}, new Map<string, number>()).entries()].sort(([a], [b]) => a.localeCompare(b, 'zh-CN'));
+---
+
+<BaseLayout title="分类" description="按分类浏览 Spring Blog 的文章。">
+  <div class="shell narrow page-section">
+    <header class="page-heading">
+      <p class="eyebrow">CATEGORIES</p>
+      <h1>分类</h1>
+      <p>写作所处的几条长期路径。</p>
+    </header>
+    <div class="term-grid term-grid-large">
+      {counts.length === 0 && <p>公开文章发布后，分类会显示在这里。</p>}
+      {counts.map(([category, count]) => (
+        <a href={`/categories/${category}/`}><span>{category}</span><small>{count} 篇</small></a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,34 @@
+---
+import type { BlogPost } from '../lib/posts';
+import { formatDate, postDescription, postPath, tagPath } from '../lib/posts';
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="post-row">
+  <div class="post-row-copy">
+    <div class="post-meta">
+      <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+      <span aria-hidden="true">·</span>
+      <a href={`/categories/${post.data.category}/`}>{post.data.category}</a>
+    </div>
+    <h2><a href={postPath(post)}>{post.data.title}</a></h2>
+    <p>{postDescription(post)}</p>
+    {post.data.tags.length > 0 && (
+      <ul class="tag-list" aria-label="标签">
+        {post.data.tags.slice(0, 4).map((tag) => (
+          <li><a href={tagPath(tag)}>#{tag}</a></li>
+        ))}
+      </ul>
+    )}
+  </div>
+  {post.data.cover && (
+    <a class="post-row-cover" href={postPath(post)} tabindex="-1" aria-hidden="true">
+      <img src={post.data.cover} alt="" width="320" height="180" loading="lazy" decoding="async" />
+    </a>
+  )}
+</article>

@@ -1,0 +1,30 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+
+  return pages.map((page) => ({
+    params: { page: page.id },
+    props: { page },
+  }));
+}
+
+interface Props {
+  page: CollectionEntry<'pages'>;
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<BaseLayout title={page.data.title}>
+  <article class="shell prose standalone-page page-section">
+    <header class="page-heading">
+      <p class="eyebrow">PAGE</p>
+      <h1>{page.data.title}</h1>
+    </header>
+    <Content />
+  </article>
+</BaseLayout>
