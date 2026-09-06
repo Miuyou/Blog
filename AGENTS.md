@@ -25,16 +25,17 @@ Publishing an ordinary article must not require the author to edit Astro, CSS, c
 
 When the author says “发布这篇”:
 
-1. Preserve the article's wording and voice unless editing is explicitly requested.
-2. Fix only clear Markdown and layout problems.
-3. Add the smallest useful frontmatter set: `title`, `pubDate`, `category`, and optional `tags`, `description`, `cover`, `updatedDate`, or `draft`.
-4. Generate a stable URL-safe slug. Never change a published slug without adding a redirect.
-5. Put article files in `src/content/blog/<category>/` and images in `public/images/`.
-6. Use root-relative image paths such as `/images/example.webp`.
-7. Run `npm run optimize:images` when adding a new cover that is not already WebP.
-8. Check internal links, external assets, metadata, mobile layout, and image dimensions.
-9. Run `npm run check` and `npm run build`; fix every blocking error.
-10. Commit and push the finished change. Production deployment occurs when `main` is pushed after the migration has been approved.
+1. Read and apply `/home/springwaitmiuyou0408/.codex/skills/site-article-editor/SKILL.md` before creating, editing, reviewing, formatting, or publishing any article. This requirement applies to every future article task.
+2. Preserve the article's wording and voice unless editing is explicitly requested.
+3. Fix only clear Markdown and layout problems.
+4. Add the smallest useful frontmatter set: `title`, `pubDate`, `category`, and optional `tags`, `description`, `cover`, `updatedDate`, or `draft`.
+5. Generate a stable URL-safe slug. Never change a published slug without adding a redirect.
+6. Put article files in `src/content/blog/<category>/` and images in `public/images/`.
+7. Use root-relative image paths such as `/images/example.webp`.
+8. Run `npm run optimize:images` when adding a new cover that is not already WebP.
+9. Check internal links, external assets, metadata, mobile layout, and image dimensions.
+10. Run `npm run check` and `npm run build`; fix every blocking error.
+11. Commit and push the finished change. Production deployment occurs when `main` is pushed after the migration has been approved.
 
 ## Engineering rules
 
@@ -42,6 +43,7 @@ When the author says “发布这篇”:
 - Keep dependencies and browser JavaScript minimal. Do not add a backend, database, CMS, or persistent Node server without an explicit requirement.
 - Keep code educational, direct, and easy to read. Avoid compatibility layers, dead paths, unnecessary abstractions, and speculative error handling.
 - Keep old URLs working. Current historical article URLs use `/posts/<category>/<slug>/`.
+- Articles without an explicit `cover` use the homepage hero image for their list card, article banner, and social preview. Do not add decorative per-article covers unless the author requests one.
 - Do not modify DNS, VPS configuration, or production deployment settings without explicit approval.
 - The author approved merging `astro-migration` into `main` on 2026-09-05. All 48 migrated articles and their assets are now kept under root `隐藏内容/`, outside Astro collections and `public`, so they do not enter deployment output. Do not republish them without an explicit request; restore both Markdown and referenced images together.
 - Keep the root `写作手册.md` accurate when changing article metadata or publishing behavior.

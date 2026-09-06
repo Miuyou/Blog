@@ -2,7 +2,7 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import TableOfContents from '../../components/TableOfContents.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { comparePosts, formatDate, postDescription, postPath, postSlug, tagPath } from '../../lib/posts';
+import { comparePosts, formatDate, postCover, postDescription, postPath, postSlug, tagPath } from '../../lib/posts';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(comparePosts);
@@ -28,12 +28,13 @@ interface Props {
 const { post, newer, older } = Astro.props;
 const { Content, headings } = await render(post);
 const description = postDescription(post);
+const cover = postCover(post);
 ---
 
 <BaseLayout
   title={post.data.title}
   description={description}
-  image={post.data.cover}
+  image={cover}
   type="article"
   publishedTime={post.data.pubDate}
   updatedTime={post.data.updatedDate}
@@ -59,11 +60,9 @@ const description = postDescription(post);
       )}
     </header>
 
-    {post.data.cover && (
-      <figure class="article-cover shell">
-        <img src={post.data.cover} alt="" width="1280" height="720" fetchpriority="high" />
-      </figure>
-    )}
+    <figure class="article-cover shell">
+      <img src={cover} alt="" width="1280" height="720" fetchpriority="high" />
+    </figure>
 
     <div class="shell article-grid">
       <div class="prose">

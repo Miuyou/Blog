@@ -1,12 +1,13 @@
 ---
 import type { BlogPost } from '../lib/posts';
-import { formatDate, postDescription, postPath, tagPath } from '../lib/posts';
+import { formatDate, postCover, postDescription, postPath, tagPath } from '../lib/posts';
 
 interface Props {
   post: BlogPost;
 }
 
 const { post } = Astro.props;
+const cover = postCover(post);
 ---
 
 <article class="post-row">
@@ -26,9 +27,7 @@ const { post } = Astro.props;
       </ul>
     )}
   </div>
-  {post.data.cover && (
-    <a class="post-row-cover" href={postPath(post)} tabindex="-1" aria-hidden="true">
-      <img src={post.data.cover} alt="" width="320" height="180" loading="lazy" decoding="async" />
-    </a>
-  )}
+  <a class="post-row-cover" href={postPath(post)} tabindex="-1" aria-hidden="true">
+    <img src={cover} alt="" width="320" height="180" loading="lazy" decoding="async" />
+  </a>
 </article>

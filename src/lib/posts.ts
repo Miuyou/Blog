@@ -1,4 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
+import { SITE } from '../config';
 
 export type BlogPost = CollectionEntry<'blog'>;
 
@@ -12,6 +13,10 @@ export function postSlug(post: BlogPost) {
 
 export function postPath(post: BlogPost) {
   return `/posts/${postSlug(post)}/`;
+}
+
+export function postCover(post: BlogPost) {
+  return post.data.cover ?? SITE.hero;
 }
 
 export function comparePosts(a: BlogPost, b: BlogPost) {
